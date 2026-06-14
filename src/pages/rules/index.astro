@@ -1,68 +1,135 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-const chapters = await getCollection('rules');
-chapters.sort((a, b) => a.data.chapterNumber - b.data.chapterNumber);
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Rules">
-  <h1>Rules of Nippon</h1>
-  <p>Savage Bushido is built on the Savage Worlds Adventure Edition rules. The chapters below cover everything specific to the world of Nippon.</p>
+<Layout title="Home">
 
-  <ul class="chapter-list">
-   {chapters.map(chapter => (
-  <li>
-    <a href={`/rules/${chapter.id}`}>
-      <span class="chapter-num">
-        {chapter.data.label || `Chapter ${chapter.data.chapterNumber}`}
-      </span>
-      <span class="chapter-title">{chapter.data.title}</span>
-    </a>
-  </li>
-))}
-  </ul>
+  <div class="hero">
+    <img src="/hero.jpg" alt="Kuniyoshi — Fording of the Uji River, 1184" class="hero-img" />
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <p class="hero-kicker">A Setting for Savage Worlds Adventure Edition</p>
+        <h1 class="hero-title">Savage Bushido</h1>
+        <p class="hero-tagline">Steel and honor in warring-states Nippon</p>
+        <div class="hero-buttons">
+          <a href="/rules" class="btn-primary">Read the Rules</a>
+          <a href="/about" class="btn-secondary">About the Game</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>The blade catches the afternoon light as it clears the scabbard. Across the garden, the Daimyo's tea cup is halfway to his lips. Neither man speaks.</p>
+      <p>Welcome to Nippon — a world of extraordinary beauty and extraordinary violence, where the way you carry a sword and the way you pour tea are equally martial arts.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">⚔</div>
+        <h2>Bugei — The Martial Arts</h2>
+        <p>A three-tier system of martial Edges — Category Omote, Specialist, and Okuden secret techniques — built on real teacher relationships in play.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">巻</div>
+        <h2>On — The Honor Score</h2>
+        <p>A 1–20 honor score that follows your character everywhere, shapes every social roll, and changes through every decision you make.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">火</div>
+        <h2>Three Arcane Traditions</h2>
+        <p>Shugendo elemental sorcery, Buddhist miracles, and Shinto Kami-granted powers — each with distinct mechanics, costs, and social position.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">鳥</div>
+        <h2>A Living World</h2>
+        <p>The Shikken tightens his grip. Yorike returns from war. The Ryojii-Wada conflict spreads. Nippon does not wait for the players to act.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="/rules/chapter-one" class="btn-primary">Start Reading — Chapter One</a>
+      <a href="/tools" class="btn-secondary">Player Tools</a>
+    </div>
+  </div>
+
 </Layout>
 
 <style>
-  .chapter-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 2rem;
+  /* Override Layout's max-width padding for the hero */
+  :global(main) { padding: 0 !important; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(26, 18, 8, 0.88) 0%,
+      rgba(26, 18, 8, 0.65) 50%,
+      rgba(26, 18, 8, 0.2) 100%
+    );
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
   }
 
-  .chapter-list a {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 0.8rem 1rem;
-    background: #ede5cc;
-    border: 1px solid #c4a96b;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #1a1208;
-    transition: background 0.15s;
+  .hero-content {
+    padding: 3rem 4rem;
+    max-width: 540px;
   }
 
-  .chapter-list a:hover {
-    background: #e0d5b8;
-  }
-
-  .chapter-num {
-    font-size: 0.8rem;
+  .hero-kicker {
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #7a6040;
-    white-space: nowrap;
-    min-width: 5rem;
-    flex-shrink: 0;
+    letter-spacing: 0.2em;
+    color: #c4a96b;
+    margin-bottom: 0.75rem;
   }
 
-  .chapter-title {
-    font-size: 1rem;
-    color: #8b1a1a;
+  .hero-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f5f0e3;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
   }
-</style>
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: #c4a96b;
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-family: Georgia, serif;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    background: #8b1a1a;
+    color: #f5f0e3;
+    text-decoration:
+    

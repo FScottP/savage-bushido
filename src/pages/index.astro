@@ -3,7 +3,228 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
-  <h1>Savage Bushido</h1>
-  <p>A warring-states Japan setting for Savage Worlds Adventure Edition.</p>
-  <a href="/about">About this project →</a>
+
+  <div class="hero">
+    <img src="/hero.jpg" alt="Kuniyoshi — Fording of the Uji River, 1184" class="hero-img" />
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <p class="hero-kicker">A Setting for Savage Worlds Adventure Edition</p>
+        <h1 class="hero-title">Savage Bushido</h1>
+        <p class="hero-tagline">Steel and honor in warring-states Nippon</p>
+        <div class="hero-buttons">
+          <a href="/rules" class="btn-primary">Read the Rules</a>
+          <a href="/about" class="btn-secondary">About the Game</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>The blade catches the afternoon light as it clears the scabbard. Across the garden, the Daimyo's tea cup is halfway to his lips. Neither man speaks.</p>
+      <p>Welcome to Nippon — a world of extraordinary beauty and extraordinary violence, where the way you carry a sword and the way you pour tea are equally martial arts.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">⚔</div>
+        <h2>Bugei — The Martial Arts</h2>
+        <p>A three-tier system of martial Edges — Category Omote, Specialist, and Okuden secret techniques — built on real teacher relationships in play.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">巻</div>
+        <h2>On — The Honor Score</h2>
+        <p>A 1–20 honor score that follows your character everywhere, shapes every social roll, and changes through every decision you make.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">火</div>
+        <h2>Three Arcane Traditions</h2>
+        <p>Shugendo elemental sorcery, Buddhist miracles, and Shinto Kami-granted powers — each with distinct mechanics, costs, and social position.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">鳥</div>
+        <h2>A Living World</h2>
+        <p>The Shikken tightens his grip. Yorike returns from war. The Ryojii-Wada conflict spreads. Nippon does not wait for the players to act.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="/rules/chapter-one" class="btn-primary">Start Reading — Chapter One</a>
+      <a href="/tools" class="btn-secondary">Player Tools</a>
+    </div>
+  </div>
+
 </Layout>
+
+<style>
+  :global(main) { padding: 0 !important; }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(26, 18, 8, 0.88) 0%,
+      rgba(26, 18, 8, 0.65) 50%,
+      rgba(26, 18, 8, 0.2) 100%
+    );
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-content {
+    padding: 3rem 4rem;
+    max-width: 540px;
+  }
+
+  .hero-kicker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #c4a96b;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f5f0e3;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: #c4a96b;
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-family: Georgia, serif;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: #8b1a1a;
+    color: #f5f0e3;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #b8902a; color: #1a1208; }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: #f5f0e3;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(196, 169, 107, 0.5);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(196, 169, 107, 0.15); border-color: #c4a96b; }
+
+  .intro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .intro-text {
+    border-left: 3px solid #c4a96b;
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .intro-text p {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #3d2b10;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .feature {
+    background: #ede5cc;
+    border: 1px solid #c4a96b;
+    border-radius: 6px;
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #8b1a1a;
+    opacity: 0.7;
+  }
+
+  .feature h2 {
+    font-size: 1rem;
+    color: #8b1a1a;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, serif;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+    color: #3d2b10;
+    line-height: 1.6;
+  }
+
+  .cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding-top: 1rem;
+    border-top: 1px solid #c4a96b;
+  }
+
+  .cta .btn-secondary {
+    color: #3d2b10;
+    border-color: #c4a96b;
+  }
+  .cta .btn-secondary:hover { background: #e0d5b8; }
+
+  @media (max-width: 600px) {
+    .hero { height: 400px; }
+    .hero-content { padding: 2rem; }
+    .hero-title { font-size: 2.5rem; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .cta { flex-direction: column; align-items: center; }
+  }
+</style>
