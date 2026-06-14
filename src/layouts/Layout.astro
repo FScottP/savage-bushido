@@ -25,8 +25,9 @@ const { title = "Savage Bushido" } = Astro.props;
     </main>
 
     <footer>
-      <p>Savage Bushido is a setting for Savage Worlds Adventure Edition.</p>
-    </footer>
+  <p>Savage Bushido is an independent setting for Savage Worlds Adventure Edition.</p>
+  <p class="copyright">© 2025 F. Scott Pfeiffer. All rights reserved. This game references the Savage Worlds game system, available from Pinnacle Entertainment Group at <a href="https://www.peginc.com" target="_blank">www.peginc.com</a>. Savage Worlds and all associated logos and trademarks are copyrights of Pinnacle Entertainment Group.</p>
+</footer>
   </body>
 </html>
 
@@ -109,5 +110,15 @@ const { title = "Savage Bushido" } = Astro.props;
     font-size: 0.85rem;
     color: #7a6040;
     margin-top: 4rem;
+	.copyright {
+  font-size: 0.75rem;
+  color: #5a4830;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.copyright a {
+  color: #7a6040;
+}
   }
 </style>

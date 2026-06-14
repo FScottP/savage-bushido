@@ -3,8 +3,156 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="About">
-  <h1>About Savage Bushido</h1>
-  <p>Savage Bushido adapts the classic 1981 Bushido RPG by Bob Charrette and Paul Hume into the Savage Worlds Adventure Edition rules.</p>
-  <p>It is set in Nippon — a mythical warring-states Japan — where honor, steel, and the spirit world shape every life.</p>
-  <a href="/">← Back to home</a>
+
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <h1>About Savage Bushido</h1>
+    </div>
+  </div>
+
+  <div class="about-body">
+
+    <section class="about-section">
+      <h2>What Is Savage Bushido?</h2>
+      <p>Savage Bushido is a complete tabletop roleplaying game setting built on the Savage Worlds Adventure Edition rules. It adapts the classic 1981 Bushido RPG by Robert N. Charrette and Paul R. Hume — one of the first RPGs to explore Japanese-inspired fantasy — into the modern Savage Worlds framework.</p>
+      <p>The setting is Nippon, a mythical warring-states Japan inspired by medieval Japanese history and culture but deliberately fictionalized to create a world that belongs to the game rather than the historical record. The current political crisis is inspired by the English Wars of the Roses as much as by Japanese history. The religions draw on Shinto and Buddhist traditions but simplify and adapt them for playability.</p>
+      <p>Where the original Bushido was meticulous, Savage Bushido is dramatic. Both are legitimate approaches. We chose drama.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Design Philosophy</h2>
+      <p>Savage Bushido preserves what made the original great — the On honor system, the Profession-based advancement, the multi-tier Bugei martial arts, the layered social conflict, the three arcane traditions — while using SWADE's fast, flexible mechanics to make it play more fluidly at the modern table.</p>
+      <p>Six principles guided every design decision:</p>
+      <ul>
+        <li><strong>SWADE mechanics wherever possible.</strong> New mechanics are reserved for places where SWADE genuinely couldn't capture the original game's feel.</li>
+        <li><strong>Consequences, not prohibitions.</strong> The rigid social hierarchy is expressed through consequences rather than hard locks. A Heimin can learn Kenjutsu — but it costs On.</li>
+        <li><strong>Teacher-gating creates story.</strong> The most powerful techniques cannot simply be purchased. Finding a teacher, earning their trust, and proving worthiness are adventures in themselves.</li>
+        <li><strong>Social consequences are real.</strong> On is not decorative. Group Rank is not background flavor. The social systems are mechanical systems.</li>
+        <li><strong>Trappings and flavor first.</strong> A Hi-do bolt is mechanically a SWADE bolt power with a fire trapping. New mechanics only where trappings were insufficient.</li>
+        <li><strong>The world breathes.</strong> Nippon's political crisis exists independently of the player characters. Run it as a living world, not a backdrop.</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Current Status</h2>
+      <p>Savage Bushido is currently in open playtest. The complete core rulebook — nine chapters covering all rules, seven Professions, the Bugei martial arts system, three arcane traditions, and the world of Nippon — is available <a href="/rules">here</a> for free.</p>
+      <p>Feedback from playtesters is welcome and shapes the final product. If you run a session, we want to hear what worked, what didn't, and what questions came up at the table.</p>
+      <p>A Game Master's Guide is in development, covering extended adventure frameworks, GM tools, additional organizations, and the deeper history of Nippon.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>About the Designer</h2>
+      <p>Savage Bushido is designed by F. Scott Pfeiffer, a longtime tabletop RPG player and Game Master. Scott has run campaigns in multiple systems over many years and brings a practitioner's perspective to the design — every mechanic in Savage Bushido has been tested against the question of whether it would actually work at the table at ten o'clock on a Friday night.</p>
+    </section>
+
+    <section class="about-section legal">
+      <h2>Legal Notices</h2>
+
+      <h3>Savage Worlds</h3>
+      <p>This game references the Savage Worlds game system, available from Pinnacle Entertainment Group at <a href="https://www.peginc.com" target="_blank">www.peginc.com</a>. Savage Worlds and all associated logos and trademarks are copyrights of Pinnacle Entertainment Group. Used with permission. Pinnacle makes no representation or warranty as to the quality, viability, or suitability for purpose of this product.</p>
+
+      <h3>Bushido</h3>
+      <p>Savage Bushido is an independent work inspired by the Bushido role-playing game, originally designed by Robert N. Charrette and Paul R. Hume and published by Fantasy Games Unlimited (© 1981). Savage Bushido does not reproduce text or game mechanics from the original Bushido RPG. It adapts and reimagines concepts, systems, and the world of Nippon in an entirely new form for use with the Savage Worlds Adventure Edition rules. No claim is made to the original Bushido trademark or copyright.</p>
+
+      <h3>Art</h3>
+      <p>The home page hero image is <em>Fording of the Uji River</em> (1184) by Utagawa Kuniyoshi (1797–1861), a woodblock print triptych held in the collection of the British Museum. The work is in the public domain. Chapter and appendix header images were generated using Midjourney and are original to this work.</p>
+
+      <h3>Playtest Status</h3>
+      <p>Savage Bushido is currently a free playtest document. No commercial use of this material is intended or implied at this stage. All rules, content, and design are subject to change based on playtest feedback.</p>
+    </section>
+
+  </div>
+
 </Layout>
+
+<style>
+  :global(main) { padding: 0 !important; }
+
+  .about-hero {
+    background: #1a1208;
+    padding: 3rem 2.5rem 2.5rem;
+    border-bottom: 2px solid #8b1a1a;
+  }
+
+  .about-hero h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #f5f0e3;
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+
+  .about-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .about-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e0d5b8;
+  }
+
+  .about-section:last-child {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    color: #8b1a1a;
+    border-bottom: 1px solid #c4a96b;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h3 {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #3d2b10;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+  }
+
+  p {
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: #1a1208;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+
+  strong { color: #3d2b10; }
+
+  .legal {
+    background: #f5f0e3;
+    border: 1px solid #c4a96b;
+    border-radius: 6px;
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+  }
+
+  .legal h2 {
+    margin-top: 0;
+  }
+
+  .legal p {
+    font-size: 0.9rem;
+    color: #3d2b10;
+  }
+
+  a { color: #8b1a1a; }
+  a:hover { color: #b8902a; }
+</style>
