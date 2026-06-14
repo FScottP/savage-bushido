@@ -8,6 +8,7 @@ const rules = defineCollection({
     chapterNumber: z.number(),
     description: z.string().optional(),
     label: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 

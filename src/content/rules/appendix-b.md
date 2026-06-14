@@ -3,6 +3,7 @@ title: "Group Status Factors"
 chapterNumber: 11
 label: "Appendix B"
 description: "Organizational prestige modifiers and cross-organizational status interactions that supplement the Group Rank system."
+image: "/app-b.jpg"
 ---
 
 This appendix supplements the Group Rank rules in Chapter Seven with specific modifiers for organizational prestige and cross-organizational interactions. These factors apply when Group Rank interacts with social rolls in contexts where the organization's reputation — not just the character's rank within it — carries weight.

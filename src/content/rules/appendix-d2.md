@@ -3,6 +3,7 @@ title: "Adversaries and Allies — Legendary and Supernatural Beings"
 chapterNumber: 16
 label: "Appendix D-2"
 description: "Stat blocks for legendary beings and supernatural entities — master swordsmen, Tengu, Kitsune, Yurei, Oni, Kami, and the great beasts of Nipponese mythology."
+image: "/app-d2.jpg"
 ---
 
 These beings originate in legend, in the spirit world, or at the intersection of the mortal and divine. Fighting them is often not the correct solution. Understanding what they want and why they are present usually is.

@@ -3,6 +3,7 @@ title: "Names of Nippon"
 chapterNumber: 17
 label: "Appendix E"
 description: "Clan and personal name tables with construction instructions — roll tables for GMs and selection lists for players."
+image: "/app-e.jpg"
 ---
 
 Names in Nippon carry social meaning. A person's full name — clan name followed by given name — announces their lineage, their region, and their social class to anyone who hears it. A Buke warrior introduces himself as "Ryojii Korisawa" — Ryojii being the clan name, Korisawa the personal name. A Heimin farmer may have only a personal name; a high-ranking court noble may have multiple ceremonial names accumulated over a career.

@@ -2,6 +2,7 @@
 title: "Edges and Hindrances"
 chapterNumber: 5
 description: "The complete Edge taxonomy for Savage Bushido — Background, Combat, Bugei, Okuden, Social, Leadership, Arcane, Vocational, Supernatural, and Legendary Edges, plus Hindrances."
+image: "/ch5.jpg"
 ---
 
 Edges are the primary advancement currency of Savage Bushido. Every advance you earn can become an Edge — a new capability, a deepened skill, a mastered technique, or a social advantage. The Edge list is long because Nippon rewards specialization. A Bushi who has spent three advances on the Zanshin chain fights very differently from one who has spent those same advances on social and leadership Edges.

@@ -2,6 +2,7 @@
 title: "Combat in Nippon"
 chapterNumber: 6
 description: "How combat works in Savage Bushido — weapons, armor, subdual damage, the Formal Duel, and Mass Battle."
+image: "/ch6.jpg"
 ---
 
 Combat in Savage Bushido uses standard SWADE rules as its foundation. Everything in the Savage Worlds core rules applies — Action Cards, Wild Cards, Bennies, Shaken, Wounds, the works. This chapter covers the additions and modifications specific to Nippon: the weapons and armor of the period, subdual damage, the Formal Duel system, and Mass Battle using the Warfare skill.

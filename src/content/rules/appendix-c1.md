@@ -3,6 +3,7 @@ title: "Shugendo Power Lists — The Five Schools"
 chapterNumber: 12
 label: "Appendix C-1"
 description: "Complete power lists for all five Shugendo elemental Schools — Hi-do (Fire), Mizu-do (Water), Hayashi-do (Wood), Kane-do (Metal), and Tsuchi-do (Soil)."
+image: "/app-c1.jpg"
 ---
 
 Shugendo powers are organized by School. A Shugenja may only access powers from their chosen School — the elemental tradition they committed to at character creation. The Yoga Scholar Edge (Chapter Five) allows Gakusho to access one School's Novice and Seasoned powers through religious practice.

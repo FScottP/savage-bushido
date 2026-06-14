@@ -3,6 +3,7 @@ title: "Adversaries and Allies — Humans and Beasts"
 chapterNumber: 15
 label: "Appendix D-1"
 description: "Stat blocks for human NPCs and natural beasts — warriors, criminals, clergy, commoners, and the animals of Nippon's mountains and coasts."
+image: "/app-d1.jpg"
 ---
 
 This appendix provides Game Master reference stat blocks for humans and beasts a party may encounter in Savage Bushido. All stats use SWADE format. Wild Cards are marked [WC] and have a Wild Die; Extras do not.

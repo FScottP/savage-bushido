@@ -2,6 +2,7 @@
 title: "Skills of Nippon"
 chapterNumber: 3
 description: "All 27 skills available in Savage Bushido, including the Arts of Nippon three-layer system and the three script skills."
+image: "/ch3.jpg"
 ---
 
 Skills represent what your character has learned to do. Every skill is linked to an Attribute — when you make a skill roll, you roll that skill's die and your Wild Die (d6 for Wild Cards), taking the higher result.

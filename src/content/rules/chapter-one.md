@@ -2,6 +2,7 @@
 title: "Introduction"
 chapterNumber: 1
 description: "What Savage Bushido is, how to use it, design philosophy, and required materials."
+image: "/ch1.jpg"
 ---
 
 The blade catches the afternoon light as it clears the scabbard. Across the garden, the Daimyo's tea cup is halfway to his lips. Neither man speaks. The poem composed this morning is still drying in the poet's quarters, waiting to be presented. The battle for the northern province has been fought; who won is still being negotiated. Somewhere in the hills, a Shugenja has been walking through fire for three days and counting. And in the city below, a Yakuza lieutenant is about to make the worst decision of a fairly poor life.

@@ -3,6 +3,7 @@ title: "Buddhist Miracles"
 chapterNumber: 13
 label: "Appendix C-2"
 description: "Complete power list for Buddhist Miracles — the compassionate divine powers available to Gakusho (Buddhist) and Sohei practitioners."
+image: "/app-c2.jpg"
 ---
 
 Buddhist miracles flow from the practitioner's relationship with the Buddhas and Bodhisattvas. The power is not the Gakusho's own — it is granted through faith, devotion, and the cultivation of compassion. All Buddhist powers use the Butsudo skill (Spirit). Full PP recovery requires sunrise devotion (30 minutes of sutra recitation and meditation at dawn). Pollution accumulates through violence, death contact, and precept violation — see Chapter Eight for full rules.

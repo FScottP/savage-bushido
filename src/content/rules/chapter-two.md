@@ -2,6 +2,7 @@
 title: "Creating a Hero of Nippon"
 chapterNumber: 2
 description: "Nine steps to build your character — from Birth and Profession through attributes, skills, edges, and your starting On score."
+image: "/ch2.jpg"
 ---
 
 Creating a character in Savage Bushido follows nine steps. Work through them in order the first time. Experienced players will find steps they can handle simultaneously, but the sequence matters — choices made in Steps Zero and One shape everything that follows.

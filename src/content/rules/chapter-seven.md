@@ -2,6 +2,7 @@
 title: "Social Conflict and Honor"
 chapterNumber: 7
 description: "The On honor system, three-tier social conflict, the gift economy, Group Rank, and five worked scenarios."
+image: "/ch7.jpg"
 ---
 
 Nippon is a society built on social performance. Every interaction carries weight — who you are, how you present yourself, what you owe and are owed, whether your conduct matches your station. The social systems in Savage Bushido are not flavor layered over combat mechanics. They are mechanical systems in their own right, with consequences as real as a sword wound.

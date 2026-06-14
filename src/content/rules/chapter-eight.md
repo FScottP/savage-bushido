@@ -2,6 +2,7 @@
 title: "The Arcane"
 chapterNumber: 8
 description: "The three arcane traditions of Nippon — Shugendo, Buddhist Miracles, and Shinto Miracles — with Pollution, Kegare, Sacred Texts, and the spirit world."
+image: "/ch8.jpg"
 ---
 
 Nippon is alive with spiritual force. The mountains breathe. Rivers have personalities. The dead do not always stay where they are put. For most people, this spiritual reality is background — acknowledged, propitiated, occasionally feared, rarely engaged directly. For the Shugenja, the Gakusho, and the Sohei, the spiritual world is their primary workplace.

@@ -3,6 +3,7 @@ title: "Organizations of Nippon"
 chapterNumber: 10
 label: "Appendix A"
 description: "Eight organizations with full rank tables, titles, On requirements, and resources — from Samurai clans to criminal gangs."
+image: "/app-a.jpg"
 ---
 
 Organizations in Nippon are not background flavor — they are mechanical resources. Your Group Rank within an organization determines what help you can call on, what authority you carry, and what obligations you owe. This appendix provides the full rank tables, title conventions, On requirements, and available resources for all eight major organization types.

@@ -2,6 +2,7 @@
 title: "The World of Nippon"
 chapterNumber: 9
 description: "History, geography, daily life, the current political crisis, downtime rules, and finding teachers in the warring-states world of Nippon."
+image: "/ch9.jpg"
 ---
 
 Nippon is a land of beauty and blood. Cherry blossoms fall on battlefield corpses. Courtiers compose poems about the transience of moonlight while their lords plot assassination. Peasants farm the same fields their ancestors fought over for generations, paying taxes to whoever's army arrived most recently and praying the next army takes longer to come.

@@ -3,6 +3,7 @@ title: "Shinto Miracles"
 chapterNumber: 14
 label: "Appendix C-3"
 description: "Complete power list for Shinto Miracles — the Kami-granted powers available to Gakusho (Shinto) practitioners through ritual purity and relationship with the spirit world."
+image: "/app-c3.jpg"
 ---
 
 Shinto miracles arise from relationship with the Kami — the spirits of the natural world, the ancestors, and the sacred places of Nippon. The Shinto Gakusho does not command the Kami; they petition them, maintain the relationships through ritual purity, and receive power as an expression of the Kami's favor.

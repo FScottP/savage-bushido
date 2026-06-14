@@ -2,6 +2,7 @@
 title: "Professions and Profession Edges"
 chapterNumber: 4
 description: "The seven Professions of Nippon — their advancement chains, Profession Edges, and Ki powers from Novice through Legendary rank."
+image: "/ch4.jpg"
 ---
 
 Your Profession is your path through Nippon's world. It determines what you are trained to do, which organizations will accept you, how society regards you, and what techniques become available as you advance. Professions are not jobs — they are identities, with obligations and privileges attached.
