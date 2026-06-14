@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const chapters = await getCollection('rules');
+chapters.sort((a, b) => a.data.chapterNumber - b.data.chapterNumber);
+---
+
+<Layout title="Rules">
+  <h1>Rules of Nippon</h1>
+  <p>Savage Bushido is built on the Savage Worlds Adventure Edition rules. The chapters below cover everything specific to the world of Nippon.</p>
+
+  <ul class="chapter-list">
+   {chapters.map(chapter => (
+  <li>
+    <a href={`/rules/${chapter.id}`}>
+      <span class="chapter-num">
+        {chapter.data.label || `Chapter ${chapter.data.chapterNumber}`}
+      </span>
+      <span class="chapter-title">{chapter.data.title}</span>
+    </a>
+  </li>
+))}
+  </ul>
+</Layout>
+
+<style>
+  .chapter-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .chapter-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: #ede5cc;
+    border: 1px solid #c4a96b;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #1a1208;
+    transition: background 0.15s;
+  }
+
+  .chapter-list a:hover {
+    background: #e0d5b8;
+  }
+
+  .chapter-num {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7a6040;
+    white-space: nowrap;
+    min-width: 5rem;
+    flex-shrink: 0;
+  }
+
+  .chapter-title {
+    font-size: 1rem;
+    color: #8b1a1a;
+  }
+</style>

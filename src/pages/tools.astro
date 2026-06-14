@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Tools">
+  <h1>Tools &amp; Reference</h1>
+  <p>Printable tools for players and Game Masters. Open each tool in your browser, then use <strong>File → Print</strong> or the Print button on the page to save as a PDF.</p>
+
+  <div class="tools-grid">
+
+    <div class="tool-card">
+      <div class="tool-icon">⚔</div>
+      <h2>Quick Reference Card</h2>
+      <p>A4 landscape. Everything a GM or player needs mid-session without opening the rulebook — On modifier table, Ki powers, Zanshin chain, Formal Duel phases, Social Conflict tiers, Pollution and Kegare effects, Sacred Texts, and key combat modifiers.</p>
+      <a href="/quick-reference.html" target="_blank" class="tool-btn">Open Quick Reference</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-icon">巻</div>
+      <h2>Character Sheet</h2>
+      <p>A4 portrait. Tracks everything unique to Savage Bushido alongside standard SWADE stats — On score with pip tracker, all 27 skills with attribute links, script skills, Bugei tier slots, Zanshin chain progression, Pollution and Kegare trackers, separate Ki PP pool, and space for powers, gear, and background.</p>
+      <a href="/character-sheet.html" target="_blank" class="tool-btn">Open Character Sheet</a>
+    </div>
+
+  </div>
+
+  <div class="coming-soon">
+    <h2>Coming Soon</h2>
+    <ul>
+      <li>Interactive index with live search across all rules</li>
+      <li>Fillable PDF character sheet</li>
+      <li>NPC generator using the name tables from Appendix E</li>
+      <li>On score tracker for the whole party</li>
+    </ul>
+  </div>
+
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    color: #8b1a1a;
+    border-bottom: 1px solid #c4a96b;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .tool-card {
+    background: #ede5cc;
+    border: 1px solid #c4a96b;
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tool-icon {
+    font-size: 2rem;
+    color: #8b1a1a;
+    opacity: 0.6;
+  }
+
+  .tool-card h2 {
+    font-size: 1.1rem;
+    color: #8b1a1a;
+    margin: 0;
+  }
+
+  .tool-card p {
+    font-size: 0.9rem;
+    color: #3d2b10;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .tool-btn {
+    display: inline-block;
+    background: #8b1a1a;
+    color: #f5f0e3;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .tool-btn:hover {
+    background: #b8902a;
+    color: #1a1208;
+  }
+
+  .coming-soon {
+    background: #ede5cc;
+    border: 1px solid #c4a96b;
+    border-radius: 6px;
+    padding: 1.5rem;
+  }
+
+  .coming-soon h2 {
+    font-size: 1rem;
+    color: #7a6040;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .coming-soon ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .coming-soon li {
+    color: #7a6040;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .coming-soon li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c4a96b;
+  }
+
+  @media (max-width: 600px) {
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+</style>

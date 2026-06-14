@@ -1,0 +1,174 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('rules');
+  chapters.sort((a, b) => a.data.chapterNumber - b.data.chapterNumber);
+
+  return chapters.map((chapter, index) => ({
+    params: { slug: chapter.id },
+    props: {
+      chapter,
+      prev: index > 0 ? chapters[index - 1] : null,
+      next: index < chapters.length - 1 ? chapters[index + 1] : null,
+    },
+  }));
+}
+
+const { chapter, prev, next } = Astro.props;
+const { Content } = await render(chapter);
+---
+
+<Layout title={`${chapter.data.label || `Chapter ${chapter.data.chapterNumber}`}: ${chapter.data.title}`}>
+  <p class="breadcrumb"><a href="/rules">← Rules</a></p>
+  <p class="chapter-label">{chapter.data.label || `Chapter ${chapter.data.chapterNumber}`}</p>
+  <h1>{chapter.data.title}</h1>
+  {chapter.data.description && <p class="description">{chapter.data.description}</p>}
+
+  <div class="content">
+    <Content />
+  </div>
+
+  <nav class="chapter-nav">
+    <div class="nav-prev">
+      {prev && (
+        <a href={`/rules/${prev.id}`}>
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">{prev.data.label || `Chapter ${prev.data.chapterNumber}`}: {prev.data.title}</span>
+        </a>
+      )}
+    </div>
+    <div class="nav-next">
+      {next && (
+        <a href={`/rules/${next.id}`}>
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">{next.data.label || `Chapter ${next.data.chapterNumber}`}: {next.data.title}</span>
+        </a>
+      )}
+    </div>
+  </nav>
+</Layout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .chapter-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #7a6040;
+    margin-bottom: 0.25rem;
+  }
+
+  .description {
+    font-style: italic;
+    color: #7a6040;
+    border-left: 3px solid #c4a96b;
+    padding-left: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .content h2 {
+    color: #8b1a1a;
+    border-bottom: 1px solid #c4a96b;
+    padding-bottom: 0.3rem;
+    margin-top: 2.5rem;
+  }
+
+  .content h3 {
+    color: #3d2b10;
+    margin-top: 1.5rem;
+  }
+
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .content th {
+    background: #3d2b10;
+    color: #f5f0e3;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .content td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #e0d5b8;
+    vertical-align: top;
+  }
+
+  .content tr:nth-child(even) td {
+    background: #f0ead8;
+  }
+
+  .content ul, .content ol {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .content li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .content strong {
+    color: #3d2b10;
+  }
+
+  /* Previous / Next navigation */
+  .chapter-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #c4a96b;
+  }
+
+  .nav-prev, .nav-next {
+    display: flex;
+  }
+
+  .nav-next {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .chapter-nav a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    background: #ede5cc;
+    border: 1px solid #c4a96b;
+    border-radius: 4px;
+    transition: background 0.15s;
+    max-width: 100%;
+  }
+
+  .chapter-nav a:hover {
+    background: #e0d5b8;
+  }
+
+  .nav-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7a6040;
+  }
+
+  .nav-title {
+    font-size: 0.9rem;
+    color: #8b1a1a;
+  }
+</style>

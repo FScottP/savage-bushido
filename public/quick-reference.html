@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savage Bushido — Quick Reference</title>
+<style>
+  :root {
+    --ink:      #1a1208;
+    --ink-mid:  #3d2b10;
+    --ink-faint:#7a6040;
+    --paper:    #f5f0e3;
+    --paper-mid:#ede5cc;
+    --red:      #8b1a1a;
+    --red-faint:#c9a090;
+    --gold:     #b8902a;
+    --rule:     #c4a96b;
+    --ff-title: 'Georgia', 'Times New Roman', serif;
+    --ff-body:  'Arial Narrow', 'Arial', sans-serif;
+    --ff-mono:  'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #888;
+    font-family: var(--ff-body);
+    font-size: 10px;
+    color: var(--ink);
+  }
+
+  /* Print button */
+  .print-bar {
+    background: #1a1208;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .print-bar span {
+    color: #c4a96b;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .print-btn {
+    background: #8b1a1a;
+    color: #f5f0e3;
+    border: none;
+    padding: 6px 18px;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .print-btn:hover { background: #b8902a; color: #1a1208; }
+
+  /* Page wrapper — A4 landscape */
+  .page {
+    width: 297mm;
+    min-height: 210mm;
+    background: var(--paper);
+    margin: 8mm auto;
+    padding: 6mm 7mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0 5mm;
+    border: 0.5mm solid var(--rule);
+    box-shadow: 2mm 2mm 8mm rgba(0,0,0,0.4);
+  }
+
+  /* Masthead */
+  .masthead {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 0.8mm solid var(--red);
+    margin-bottom: 3mm;
+    padding-bottom: 2mm;
+  }
+  .masthead-title {
+    font-family: var(--ff-title);
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    color: var(--red);
+  }
+  .masthead-sub {
+    font-family: var(--ff-title);
+    font-size: 11px;
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+  .masthead-kanji {
+    font-size: 26px;
+    color: var(--red);
+    opacity: 0.35;
+  }
+
+  /* Columns */
+  .col { display: flex; flex-direction: column; gap: 3mm; }
+  .col + .col { border-left: 0.2mm solid var(--rule); padding-left: 5mm; }
+
+  /* Panels */
+  .panel { background: var(--paper-mid); border: 0.3mm solid var(--rule); border-radius: 0.5mm; overflow: hidden; }
+  .panel-head { background: var(--ink-mid); color: var(--paper); font-family: var(--ff-title); font-size: 9.5px; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; padding: 1.2mm 2mm; }
+  .panel-head.red  { background: var(--red); }
+  .panel-head.gold { background: var(--gold); }
+  .panel-body { padding: 1.5mm 2mm; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 9px; }
+  th { background: rgba(0,0,0,0.08); font-weight: bold; font-size: 8.5px; padding: 0.8mm 1.5mm; text-align: left; border-bottom: 0.3mm solid var(--rule); }
+  td { padding: 0.7mm 1.5mm; vertical-align: top; border-bottom: 0.2mm solid rgba(180,150,100,0.3); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: rgba(0,0,0,0.03); }
+  td.r { text-align: right; font-family: var(--ff-mono); font-size: 9px; }
+  td b { color: var(--red); }
+
+  /* Entry rows */
+  .entry { display: grid; grid-template-columns: auto 1fr; gap: 0.5mm 2mm; align-items: baseline; margin-bottom: 0.8mm; font-size: 9px; line-height: 1.35; }
+  .entry-label { font-weight: bold; white-space: nowrap; color: var(--ink-mid); font-size: 8.5px; }
+
+  /* Zanshin chain */
+  .chain { display: flex; align-items: stretch; gap: 0; font-size: 8px; margin-top: 0.5mm; }
+  .chain-step { flex: 1; text-align: center; border: 0.3mm solid var(--rule); padding: 0.8mm 1mm; line-height: 1.3; }
+  .chain-step:first-child { border-radius: 0.5mm 0 0 0.5mm; }
+  .chain-step:last-child  { border-radius: 0 0.5mm 0.5mm 0; }
+  .chain-step + .chain-step { border-left: none; }
+  .chain-rank { font-weight: bold; color: var(--red); font-size: 7.5px; display: block; border-bottom: 0.2mm solid var(--rule); margin-bottom: 0.5mm; padding-bottom: 0.3mm; }
+  .chain-name { font-weight: bold; display: block; font-size: 8px; }
+  .chain-effect { color: var(--ink-mid); font-size: 7.5px; }
+
+  /* Duel phases */
+  .phases { display: flex; gap: 1.5mm; }
+  .phase { flex: 1; border: 0.3mm solid var(--rule); border-radius: 0.5mm; overflow: hidden; }
+  .phase-num { background: var(--red); color: var(--paper); font-family: var(--ff-title); font-weight: bold; font-size: 11px; text-align: center; padding: 0.5mm; }
+  .phase-name { font-weight: bold; font-size: 8px; text-align: center; padding: 0.5mm 1mm; border-bottom: 0.2mm solid var(--rule); background: rgba(0,0,0,0.04); }
+  .phase-body { padding: 1mm 1.5mm; font-size: 8px; line-height: 1.35; color: var(--ink-mid); }
+
+  /* Traditions */
+  .traditions { display: flex; gap: 1.5mm; }
+  .trad { flex: 1; border: 0.3mm solid var(--rule); border-radius: 0.5mm; overflow: hidden; }
+  .trad-head { font-weight: bold; font-size: 8.5px; text-align: center; padding: 0.8mm; color: var(--paper); }
+  .trad-head.sh { background: #2a4a6a; }
+  .trad-head.bu { background: #4a2a6a; }
+  .trad-head.st { background: #2a5a2a; }
+  .trad-body { padding: 1mm 1.5mm; font-size: 8px; line-height: 1.35; }
+
+  .divider { border: none; border-top: 0.2mm solid var(--rule); margin: 1.5mm 0; }
+
+  @media print {
+    .print-bar { display: none; }
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; width: 100%; }
+  }
+  @page { size: A4 landscape; margin: 4mm; }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>武士道 Savage Bushido — Quick Reference Card</span>
+  <button class="print-btn" onclick="window.print()">⎙ Print / Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="masthead-title">SAVAGE BUSHIDO</div>
+    <div class="masthead-sub">Quick Reference — Game Master &amp; Player Card</div>
+    <div class="masthead-kanji">武士道</div>
+  </div>
+
+  <!-- COLUMN ONE -->
+  <div class="col">
+
+    <div class="panel">
+      <div class="panel-head red">On — Honor Score</div>
+      <div class="panel-body">
+        <table>
+          <tr><th>On Score</th><th>Social Modifier</th><th>Description</th></tr>
+          <tr><td>1–4</td><td class="r">−2</td><td>Disgraced</td></tr>
+          <tr><td>5–7</td><td class="r">−1</td><td>Poor standing</td></tr>
+          <tr><td>8–12</td><td class="r">+0</td><td>Ordinary</td></tr>
+          <tr><td>13–16</td><td class="r">+1</td><td>Notable</td></tr>
+          <tr><td>17–20</td><td class="r">+2</td><td>Legendary</td></tr>
+        </table>
+        <hr class="divider">
+        <div class="entry"><span class="entry-label">Taunt inversion:</span><span>+1 per 3 pts of On you are <b>below</b> your target</span></div>
+        <div class="entry"><span class="entry-label">Group Rank mod:</span><span>+1 per rank higher (max +3); −1 per rank lower (max −3)</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Ki Powers (Bushi / Budoka)</div>
+      <div class="panel-body">
+        <div class="entry"><span class="entry-label">Pool:</span><span>5 Ki PP (separate from main PP)</span></div>
+        <div class="entry"><span class="entry-label">Activation:</span><span>Free action, once per round</span></div>
+        <hr class="divider">
+        <table>
+          <tr><th>Power</th><th>Cost</th><th>Effect</th></tr>
+          <tr><td><b>Damage Focus</b></td><td class="r">1–3 PP</td><td>+1/+2/+3 damage this round</td></tr>
+          <tr><td><b>Defense Focus</b></td><td class="r">1–3 PP</td><td>+1/+2/+3 Parry this round</td></tr>
+          <tr><td><b>Swift Step</b></td><td class="r">1–3 PP</td><td>+2/+4/+6 Pace this round</td></tr>
+        </table>
+        <hr class="divider">
+        <div class="entry" style="font-size:8px;color:var(--ink-mid);"><span class="entry-label">Gakusho Ki:</span><span>Devotion (+2 next Butsudo/Shinten roll; 1 Ki PP). Lore Master (once/session auto-raise on religious Knowledge roll; 2 Ki PP)</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head gold">Zanshin Chain — Multi-Action Penalties</div>
+      <div class="panel-body">
+        <div style="font-size:8px;color:var(--ink-mid);margin-bottom:1.5mm;">Standard SWADE: −2 / −4 for 2 / 3 actions. Zanshin reduces these progressively.</div>
+        <div class="chain">
+          <div class="chain-step"><span class="chain-rank">Novice</span><span class="chain-name">Mushin</span><span class="chain-effect">−1 / −2</span></div>
+          <div class="chain-step"><span class="chain-rank">Seasoned</span><span class="chain-name">Zanshin</span><span class="chain-effect">−1 / −2<br><span style="font-size:6.5px">+ free counter</span></span></div>
+          <div class="chain-step"><span class="chain-rank">Veteran</span><span class="chain-name">Fudoshin</span><span class="chain-effect">−0 / −1</span></div>
+          <div class="chain-step"><span class="chain-rank">Heroic</span><span class="chain-name">Shoshin</span><span class="chain-effect">−0 / −1<br><span style="font-size:6.5px">free counter</span></span></div>
+          <div class="chain-step"><span class="chain-rank">Legendary</span><span class="chain-name">Z. Kanzen</span><span class="chain-effect">−0 / −0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Subdual Damage</div>
+      <div class="panel-body">
+        <div class="entry"><span class="entry-label">Declare:</span><span>Before rolling. Melee only. Deals Fatigue, not Wounds.</span></div>
+        <table style="margin-top:1mm;">
+          <tr><th>Result</th><th>Effect</th></tr>
+          <tr><td>Success</td><td>1 Fatigue</td></tr>
+          <tr><td>Raise</td><td>2 Fatigue</td></tr>
+          <tr><td>Extra at 1 Fatigue</td><td>Incapacitated</td></tr>
+          <tr><td>Wild Card at 3 Fatigue</td><td>Incapacitated</td></tr>
+        </table>
+        <div style="font-size:8px;color:var(--ink-mid);margin-top:1mm;">Subdual default: Jitte, Sai, Tonfa, Kiseru pipe</div>
+      </div>
+    </div>
+
+  </div><!-- /col 1 -->
+
+  <!-- COLUMN TWO -->
+  <div class="col">
+
+    <div class="panel">
+      <div class="panel-head red">The Formal Duel</div>
+      <div class="panel-body">
+        <div class="phases">
+          <div class="phase">
+            <div class="phase-num">1</div>
+            <div class="phase-name">The Challenge</div>
+            <div class="phase-body">Announce lineage &amp; grievance. <b>Taunt roll</b> — winner gains +1 to first attack (or −1 on opponent). On loss for refusal without cause.</div>
+          </div>
+          <div class="phase">
+            <div class="phase-num">2</div>
+            <div class="phase-name">The Compact</div>
+            <div class="phase-body">Agree terms: <b>first blood / submission / death</b>. Confirm weapons and witnesses. Violation costs <b>3 On</b> immediately.</div>
+          </div>
+          <div class="phase">
+            <div class="phase-num">3</div>
+            <div class="phase-name">The Combat</div>
+            <div class="phase-body">Standard SWADE. No Gang Up. No interference (costs 3 On). <b>Iai-jutsu</b> in sheathed-start duels acts before all Action Cards in Round 1.</div>
+          </div>
+        </div>
+        <div style="font-size:8px;color:var(--ink-mid);margin-top:1.5mm;">Spare loser: winner +1 On; loser +1 On. Kill when terms = first blood: −1 On.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head gold">Social Conflict — Three Tiers</div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Tier</th><th>When</th><th>System</th></tr>
+          <tr><td><b>1</b></td><td>Routine</td><td>Single skill roll + On modifier</td></tr>
+          <tr><td><b>2</b></td><td>Significant</td><td>SWADE Social Conflict + On/Group Rank</td></tr>
+          <tr><td><b>3</b></td><td>High-stakes</td><td>Nippon Detailed System (below)</td></tr>
+        </table>
+        <hr class="divider">
+        <div style="font-size:8.5px;font-weight:bold;margin-bottom:0.8mm;">Tier 3 — Nippon Detailed System</div>
+        <div class="entry"><span class="entry-label">Step 1:</span><span>Social Status = On mod + Group Rank mod. Higher starts with 1 free Momentum.</span></div>
+        <div class="entry"><span class="entry-label">Step 2:</span><span>Disposition: Hostile (target +2) · Uncooperative (+1) · Neutral · Friendly (petitioner +1) · Helpful (+2).</span></div>
+        <div class="entry"><span class="entry-label">Step 3:</span><span>Preparation: gift (+1 step) · go-between (+1) · prior favor (+1–2 steps).</span></div>
+        <div class="entry"><span class="entry-label">Rounds:</span><span>Both choose approach, roll opposed, winner gains 1 Mom (raise = 2).</span></div>
+        <div class="entry"><span class="entry-label">Threshold:</span><span>3 (moderate) · 5 (significant) · 7 (landmark).</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Social Approaches</div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Approach</th><th>Skill</th><th>Best When</th></tr>
+          <tr><td>Cooperative</td><td>Socialize</td><td>Target Neutral or better</td></tr>
+          <tr><td>Adversarial</td><td>Taunt</td><td>Hostile; pressing advantage</td></tr>
+          <tr><td>Authority</td><td>Intimidation</td><td>You outrank the target formally</td></tr>
+          <tr><td>Artistic</td><td>Perform</td><td>Tea ceremony; poetry exchange</td></tr>
+          <tr><td>Scholarly</td><td>Knowledge</td><td>Court protocol; expertise signal</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Key Combat Modifiers</div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Situation</th><th>Mod</th></tr>
+          <tr><td>The Drop (unaware target)</td><td class="r">+4 atk &amp; dmg</td></tr>
+          <tr><td>Wild Attack</td><td class="r">+2 Fgt, +2 dmg, −2 Parry</td></tr>
+          <tr><td>Called Shot — limb</td><td class="r">−2 atk</td></tr>
+          <tr><td>Called Shot — head</td><td class="r">−4 atk</td></tr>
+          <tr><td>Gang Up (max +4)</td><td class="r">+1 per attacker</td></tr>
+          <tr><td>Higher ground</td><td class="r">+1 atk</td></tr>
+          <tr><td>Prone target (melee)</td><td class="r">+2 atk</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /col 2 -->
+
+  <!-- COLUMN THREE -->
+  <div class="col">
+
+    <div class="panel">
+      <div class="panel-head red">Arcane Traditions</div>
+      <div class="panel-body">
+        <div class="traditions">
+          <div class="trad">
+            <div class="trad-head sh">Shugendo</div>
+            <div class="trad-body">
+              <div class="entry"><span class="entry-label">Skill:</span><span>Shugendo (Sm)</span></div>
+              <div class="entry"><span class="entry-label">Recovery:</span><span>1 PP/hr; full on 8 hr sleep</span></div>
+              <div class="entry"><span class="entry-label">Cost:</span><span>None</span></div>
+              <div class="entry"><span class="entry-label">Overextend:</span><span>Spirit TN 4; success = works + Fatigue; fail = fails + Fatigue; crit fail = 2 Fatigue + Shaken 1 hr</span></div>
+            </div>
+          </div>
+          <div class="trad">
+            <div class="trad-head bu">Buddhist</div>
+            <div class="trad-body">
+              <div class="entry"><span class="entry-label">Skill:</span><span>Butsudo (Sp)</span></div>
+              <div class="entry"><span class="entry-label">Recovery:</span><span>Full on sunrise devotion (30 min)</span></div>
+              <div class="entry"><span class="entry-label">Cost:</span><span>Pollution</span></div>
+              <div class="entry"><span class="entry-label">Overextend:</span><span>As Shugendo + 2 Pollution on success; 1 on fail</span></div>
+            </div>
+          </div>
+          <div class="trad">
+            <div class="trad-head st">Shinto</div>
+            <div class="trad-body">
+              <div class="entry"><span class="entry-label">Skill:</span><span>Shinten (Sp)</span></div>
+              <div class="entry"><span class="entry-label">Recovery:</span><span>Full at shrine or sacred site</span></div>
+              <div class="entry"><span class="entry-label">Cost:</span><span>Kegare</span></div>
+              <div class="entry"><span class="entry-label">Overextend:</span><span>As Shugendo + 2 Kegare on success; 1 on fail</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Pollution (Buddhist) &amp; Kegare (Shinto)</div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Level</th><th>Arcane Penalty</th><th>Other Effect</th></tr>
+          <tr><td>0</td><td>None</td><td>—</td></tr>
+          <tr><td>1–2</td><td>−1 Butsudo/Shinten</td><td>—</td></tr>
+          <tr><td>3–4</td><td>−2 Butsudo/Shinten</td><td>No Sacred Texts</td></tr>
+          <tr><td>5+</td><td>−4 Butsudo/Shinten</td><td>PP recovery halved</td></tr>
+        </table>
+        <hr class="divider">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.3mm 2mm;font-size:8px;color:var(--ink-mid);">
+          <div><b>Pollution sources:</b> killing, corpse contact, precept break, missed sunrise</div>
+          <div><b>Kegare sources:</b> death contact, blood, taboo breach, polluted space</div>
+          <div><b>Clear Pollution:</b> temple ceremony (1 day, 1–5 Ryo) or Goma ritual</div>
+          <div><b>Clear Kegare:</b> Misogi (running water, 30 min, clears 1); shrine ceremony (all)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head gold">Sacred Texts</div>
+      <div class="panel-body">
+        <div style="font-size:8px;margin-bottom:1mm;">Recite for <b>1 full round</b> — activates power at no PP cost, success level only. Once per scene per text. Blocked at Pollution/Kegare 3+.</div>
+        <table>
+          <tr><th>Text</th><th>Tradition</th><th>Power</th></tr>
+          <tr><td>Heart Sutra</td><td>Buddhist</td><td>protection (self)</td></tr>
+          <tr><td>Healing Sutra</td><td>Buddhist</td><td>healing (touch)</td></tr>
+          <tr><td>Goma Ritual</td><td>Buddhist</td><td>exorcism (3 rounds)</td></tr>
+          <tr><td>Amida Sutra</td><td>Buddhist</td><td>relief</td></tr>
+          <tr><td>Oharae no Kotoba</td><td>Shinto</td><td>dispel (area)</td></tr>
+          <tr><td>Healing Norito</td><td>Shinto</td><td>healing (touch)</td></tr>
+          <tr><td>Exorcism Norito</td><td>Shinto</td><td>exorcism (+2 roll)</td></tr>
+          <tr><td>Ward Norito</td><td>Shinto</td><td>protection (boundary)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Mass Battle — Warfare Skill</div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Warfare Roll</th><th>Battle Result</th></tr>
+          <tr><td>Critical Failure</td><td>Lose 1d6+2 Token Pts; disgrace roll</td></tr>
+          <tr><td>Failure</td><td>Lose 1d4 Token Pts</td></tr>
+          <tr><td>Success</td><td>Opponent loses 1 Token Pt</td></tr>
+          <tr><td>Raise</td><td>Opponent loses 1d4 Token Pts</td></tr>
+          <tr><td>Two Raises</td><td>Opponent loses 1d6 Token Pts; +On</td></tr>
+        </table>
+        <div style="font-size:7.5px;color:var(--ink-mid);margin-top:0.8mm;"><b>Champion Challenge:</b> Win = +1 (decisive +2) to first Battle Roll. Refuse = −1 On.</div>
+      </div>
+    </div>
+
+  </div><!-- /col 3 -->
+
+</div><!-- /page -->
+</body>
+</html>
