@@ -53,6 +53,9 @@ import Layout from '../layouts/Layout.astro';
       <a href="/tools" class="btn-secondary">Player Tools</a>
     </div>
   </div>
+  <div class="playtest-banner">
+  <p>Running a playtest session? <a href="https://docs.google.com/forms/d/e/1FAIpQLSej4cuMaQM1e78kpwGZSaEtTIs0PfL57fetoNx30h5lTxhk3w/viewform" target="_blank">Submit your feedback →</a></p>
+</div>
 
 </Layout>
 
@@ -227,4 +230,24 @@ import Layout from '../layouts/Layout.astro';
     .feature-grid { grid-template-columns: 1fr; }
     .cta { flex-direction: column; align-items: center; }
   }
+  .playtest-banner {
+  margin-top: 3rem;
+  padding: 1rem 1.5rem;
+  background: #ede5cc;
+  border: 1px solid #c4a96b;
+  border-left: 4px solid #8b1a1a;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #3d2b10;
+}
+
+.playtest-banner a {
+  color: #8b1a1a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.playtest-banner a:hover {
+  color: #b8902a;
+}
 </style>

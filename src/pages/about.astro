@@ -33,12 +33,15 @@ import Layout from '../layouts/Layout.astro';
       </ul>
     </section>
 
-    <section class="about-section">
-      <h2>Current Status</h2>
-      <p>Savage Bushido is currently in open playtest. The complete core rulebook — nine chapters covering all rules, seven Professions, the Bugei martial arts system, three arcane traditions, and the world of Nippon — is available <a href="/rules">here</a> for free.</p>
-      <p>Feedback from playtesters is welcome and shapes the final product. If you run a session, we want to hear what worked, what didn't, and what questions came up at the table.</p>
-      <p>A Game Master's Guide is in development, covering extended adventure frameworks, GM tools, additional organizations, and the deeper history of Nippon.</p>
-    </section>
+<section class="about-section">
+  <h2>Current Status</h2>
+  <p>Savage Bushido is currently in open playtest. The complete core rulebook — nine chapters covering all rules, seven Professions, the Bugei martial arts system, three arcane traditions, and the world of Nippon — is available <a href="/rules">here</a> for free.</p>
+  <p>Feedback from playtesters is welcome and directly shapes the final product. If you run a session, please tell us what worked, what didn't, and what questions came up at the table.</p>
+  <p>A Game Master's Guide is in development, covering extended adventure frameworks, GM tools, additional organizations, and the deeper history of Nippon.</p>
+  <div class="feedback-cta">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSej4cuMaQM1e78kpwGZSaEtTIs0PfL57fetoNx30h5lTxhk3w/viewform" target="_blank" class="btn-feedback">Submit Playtest Feedback →</a>
+  </div>
+</section>
 
     <section class="about-section">
       <h2>About the Designer</h2>
@@ -155,4 +158,24 @@ import Layout from '../layouts/Layout.astro';
 
   a { color: #8b1a1a; }
   a:hover { color: #b8902a; }
+  .feedback-cta {
+  margin-top: 1.5rem;
+}
+
+.btn-feedback {
+  display: inline-block;
+  background: #8b1a1a;
+  color: #f5f0e3;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
+}
+
+.btn-feedback:hover {
+  background: #b8902a;
+  color: #1a1208;
+}
 </style>
