@@ -16,11 +16,14 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="tool-card">
-      <div class="tool-icon">巻</div>
-      <h2>Character Sheet</h2>
-      <p>A4 portrait. Tracks everything unique to Savage Bushido alongside standard SWADE stats — On score with pip tracker, all 27 skills with attribute links, script skills, Bugei tier slots, Zanshin chain progression, Pollution and Kegare trackers, separate Ki PP pool, and space for powers, gear, and background.</p>
-      <a href="/character-sheet.html" target="_blank" class="tool-btn">Open Character Sheet</a>
-    </div>
+  <div class="tool-icon">巻</div>
+  <h2>Character Sheet</h2>
+  <p>Tracks everything unique to Savage Bushido alongside standard SWADE stats — On score with pip tracker, all 27 skills with attribute links, script skills, Bugei tier slots, Zanshin chain progression, Pollution and Kegare trackers, separate Ki PP pool, and space for powers, gear, and background.</p>
+  <div class="tool-buttons">
+    <a href="/character-sheet-letter.html" target="_blank" class="tool-btn">Open — US Letter (8.5×11)</a>
+    <a href="/character-sheet.html" target="_blank" class="tool-btn tool-btn-secondary">Open — A4 (International)</a>
+  </div>
+</div>
 
   </div>
 
@@ -146,4 +149,19 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 600px) {
     .tools-grid { grid-template-columns: 1fr; }
   }
+  .tool-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tool-btn-secondary {
+  background: #7a6040;
+}
+
+.tool-btn-secondary:hover {
+  background: #b8902a;
+  color: #1a1208;
+}
 </style>
