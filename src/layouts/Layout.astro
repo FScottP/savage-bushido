@@ -12,12 +12,35 @@ const { title = "Savage Bushido" } = Astro.props;
   <body>
     <nav>
       <a href="/" class="site-title">武士道 Savage Bushido</a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/rules">Rules</a>
-		<a href="/tools">Tools</a>
-      </div>
+     <div class="nav-links">
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <div class="nav-dropdown">
+    <a href="/rules">Rules ▾</a>
+    <div class="dropdown-menu">
+      <div class="dropdown-section">Chapters</div>
+      <a href="/rules/chapter-one">Ch 1: Introduction</a>
+      <a href="/rules/chapter-two">Ch 2: Creating a Hero</a>
+      <a href="/rules/chapter-three">Ch 3: Skills</a>
+      <a href="/rules/chapter-four">Ch 4: Professions</a>
+      <a href="/rules/chapter-five">Ch 5: Edges &amp; Hindrances</a>
+      <a href="/rules/chapter-six">Ch 6: Combat</a>
+      <a href="/rules/chapter-seven">Ch 7: Social Conflict</a>
+      <a href="/rules/chapter-eight">Ch 8: The Arcane</a>
+      <a href="/rules/chapter-nine">Ch 9: The World</a>
+      <div class="dropdown-section">Appendices</div>
+      <a href="/rules/appendix-a">Appendix A: Organizations</a>
+      <a href="/rules/appendix-b">Appendix B: Group Status</a>
+      <a href="/rules/appendix-c1">Appendix C-1: Shugendo</a>
+      <a href="/rules/appendix-c2">Appendix C-2: Buddhist</a>
+      <a href="/rules/appendix-c3">Appendix C-3: Shinto</a>
+      <a href="/rules/appendix-d1">Appendix D-1: Humans &amp; Beasts</a>
+      <a href="/rules/appendix-d2">Appendix D-2: Legendary &amp; Supernatural</a>
+      <a href="/rules/appendix-e">Appendix E: Names</a>
+    </div>
+  </div>
+  <a href="/tools">Tools</a>
+</div>
     </nav>
 
     <main>
@@ -102,6 +125,61 @@ const { title = "Savage Bushido" } = Astro.props;
   a {
     color: #8b1a1a;
   }
+  /* Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1a1208;
+  border: 1px solid #c4a96b;
+  border-top: none;
+  min-width: 220px;
+  z-index: 200;
+  padding: 0.5rem 0;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.4rem 1rem;
+  color: #f5f0e3 !important;
+  font-size: 0.8rem;
+  text-decoration: none;
+  opacity: 0.85;
+  letter-spacing: 0.03em;
+  text-transform: none !important;
+}
+
+.dropdown-menu a:hover {
+  opacity: 1;
+  color: #c4a96b !important;
+  background: rgba(255,255,255,0.05);
+}
+
+.dropdown-section {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #c4a96b;
+  padding: 0.6rem 1rem 0.3rem;
+  border-top: 1px solid rgba(196,169,107,0.3);
+}
+
+.dropdown-section:first-child {
+  border-top: none;
+}
 
   /* ── Footer ── */
   footer {
