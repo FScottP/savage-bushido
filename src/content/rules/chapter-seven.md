@@ -349,3 +349,83 @@ The most fundamental social division in Nippon is between the Buke (warrior clas
 **Buke addressing Heimin:** A Buke who maintains dignity in interactions with Heimin gains nothing socially — it is expected. A Buke who publicly demeans Heimin gains nothing and may lose On if witnesses judge the behavior excessive. A Buke who treats Heimin with genuine respect is unusual and may gain On if this is part of a consistent reputation.
 
 **Crossing the line:** Social interactions that cross the Buke/Heimin line are always more difficult than interactions within the same class. Apply an additional −1 to Socialize rolls across this divide in formal contexts.
+---
+
+## The Bow
+
+Every significant social interaction in Nippon begins with a bow. The bow is not a mystery — characters raised in Nipponese society know instinctively how they should bow to any given person in any given context. It is not a skill roll. It is not a guess. It is a declaration.
+
+The player states how their character bows. The GM states how the NPC bows. What follows flows from that exchange.
+
+### The Two Components
+
+A bow has two components declared together:
+
+**Level** — who you are treating the other person as:
+- **Superior** — I acknowledge you outrank me in this context
+- **Equal** — I treat you as my peer
+- **Inferior** — I acknowledge you are below me in this context
+
+**Quality** — how you perform the bow:
+- **Discourteous** — cold, contemptuous, or challenging
+- **Courteous** — the standard, appropriate bow
+- **All Courtly Graces** — elaborate, warm, deferential, or honoring
+
+A young Samurai meets another young Samurai of similar standing on the road. The player says: *"I bow equal, courteous."* The GM says: *"He bows equal, courteous."* They pass each other without incident. The same Samurai enters a blacksmith's shop. The player says: *"I bow superior, courteous."* The GM says: *"He bows inferior, courteous."* A normal transaction begins.
+
+### Who Bows First
+
+The inferior person bows first, as a rule. This is itself a social signal — in ambiguous situations, watching who bows first tells you something about how each party perceives the relationship.
+
+### The Correct Level
+
+Characters know how to bow. Nipponese society has clear hierarchies and characters raised within it do not accidentally bow the wrong level. If a player is genuinely uncertain about the appropriate level for a situation, they may ask the GM — "What would be the right bow here?" The GM will tell them, or may say "that would be unusual" if the player's intended bow would read as odd or aggressive in context.
+
+The general principles:
+
+- Buke bow Superior to Heimin; Heimin bow Inferior to Buke. This is the most fundamental social division and is never ambiguous.
+- Within the same class, On and Group Rank determine level. Higher Social Status (On modifier + Group Rank modifier) receives the Inferior bow.
+- Within the same organization, Group Rank governs regardless of class — a Heimin Yakuza of Group Rank 3 bows Superior to a Buke Yakuza of Group Rank 1 within that organization's context.
+- Merchants bow Inferior to Farmers in the formal social hierarchy, but within a shared organization bow by Group Rank.
+- Equal On and equal Group Rank means equal bow.
+
+### Bow Quality and Its Consequences
+
+**Courteous** is the default. It carries no special weight in either direction. It is simply correct.
+
+**All Courtly Graces** signals warmth, respect, friendship, honor, supplication, or genuine deference. Done at the right moment it opens doors — the GM may apply a bonus to what follows, shift a starting Disposition toward Friendly, or allow the bow itself to count as preparation in a Tier 3 Social Conflict. Done at the wrong moment — to an enemy, to someone dramatically beneath you in a competitive context, or in a situation where it reads as desperation — the GM may apply a penalty instead. A superior who bows All Courtly Graces to an inferior after a remarkable deed is making a public statement. The GM may award On to the recipient on the spot.
+
+**Discourteous** signals contempt, hostility, disapproval, or challenge. It makes what follows more difficult — the GM will apply penalties to social rolls in the interaction as appropriate. A discourteous bow to a superior is dangerous; a superior may demand an explanation, issue a challenge, or simply have you removed. A discourteous bow from a superior to an inferior is a public humiliation — the GM may impose an On loss on the inferior immediately. Among acknowledged enemies, a discourteous bow carries less weight — contempt is expected and the social sting is diminished.
+
+### The Wrong Level — A Grave Insult
+
+Intentionally bowing the wrong level is far more serious than bowing correctly but discourteously. It is a deliberate challenge to the entire social order.
+
+**Bowing Superior when you should bow Inferior** — claiming status you do not have — is a profound insult to the person you should be acknowledging. It says: I do not recognize your position. The GM should treat this as a serious provocation. Depending on context, it may cause immediate On loss for the person being insulted, trigger a demand for a Formal Duel, or create a lasting social problem that follows the character.
+
+**Bowing Inferior when you should bow Superior** — deferring to someone below you — is rarer but also significant. It may read as deliberate sarcasm, as a calculated power move, or as an attempt to publicly shame the inferior by making their low status theatrically visible. In the right circumstances it can also be a genuine gesture of honor that shocks everyone present.
+
+The insult of a wrong-level bow is difficult to walk back. A discourteous bow can be explained — I was angry, I showed poor judgment. A wrong-level bow is harder to explain without compounding the insult.
+
+### Power and the Insult
+
+Being the insulter is not always the weaker position. A Daimyo who bows Superior discourteous to one of his own retainers in public has issued a statement — and the retainer must decide how to respond. Responding too aggressively to an insult from a superior costs On. Absorbing the insult without response also costs On. The insulter sometimes controls the situation precisely because the insulted has no clean options.
+
+Similarly, a Ronin who bows Equal to a high-ranking Samurai rather than Inferior is making a claim. If the high-ranking Samurai lets it pass without comment, the Ronin has established something. If the Samurai challenges it, a confrontation follows — but the Ronin chose the ground.
+
+The GM should read these situations as social terrain, not as rule violations to be corrected. The rules describe what the bow means. The consequences are always a matter of context, audience, and what the characters do next.
+
+### The GM's Role
+
+The bow system works because the GM plays NPCs consistently. When the players enter the Daimyo's court, every NPC bows in a way that tells the players something — about that NPC's perception of the party, about the social dynamics in the room, about what's about to happen.
+
+**Use bowing to communicate:** An NPC who bows Equal when the players expect Inferior is signaling something. An NPC who bows All Courtly Graces when Courteous would suffice wants something — or is genuinely moved. An NPC who doesn't bow at all has made a statement more powerful than any bow.
+
+**Apply consequences as judgment, not formula.** The bow system produces social consequences — but these are guidelines for GM interpretation, not hard mechanical rules. A discourteous bow in a tense negotiation might cause a penalty to the next Socialize roll, or it might end the negotiation entirely, or it might impress a warlord who respects directness. The bow tells you what the character intended. The GM determines what it meant in context.
+
+### A Note to Players
+
+You are playing characters who grew up in this culture. You know how to bow. When you are uncertain, ask — the GM will tell you what the correct bow is, or warn you that a particular choice would be read as unusual. There are no accidental insults from getting the level wrong. If you bow wrong, you meant to.
+
+*This system was inspired by the original Bushido RPG as played by the designer's group in the 1980s, with thanks to Will for making every doorway matter.*
+
