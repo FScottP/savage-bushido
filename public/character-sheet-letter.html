@@ -24,148 +24,146 @@
 
   body { background: #888; font-family: var(--ff-body); font-size: 9px; color: var(--ink); }
 
-  /* Print button */
   .print-bar {
-    background: #1a1208;
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: #1a1208; padding: 8px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
   }
-  .print-bar span {
-    color: #c4a96b;
-    font-family: Georgia, serif;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-  }
+  .print-bar span { color: #c4a96b; font-family: Georgia, serif; font-size: 13px; letter-spacing: 0.05em; }
   .print-btn {
-    background: #8b1a1a;
-    color: #f5f0e3;
-    border: none;
-    padding: 6px 18px;
-    font-family: Georgia, serif;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    border-radius: 3px;
-    text-transform: uppercase;
+    background: #8b1a1a; color: #f5f0e3; border: none;
+    padding: 6px 18px; font-family: Georgia, serif; font-size: 12px;
+    letter-spacing: 0.08em; cursor: pointer; border-radius: 3px; text-transform: uppercase;
   }
   .print-btn:hover { background: #b8902a; color: #1a1208; }
 
   .page {
-    width: 215.9mm;
-    min-height: 297mm;
+    width: 215.9mm; min-height: 279mm;
     background: var(--paper);
-    margin: 8mm auto;
-    padding: 6mm;
+    margin: 8mm auto; padding: 5mm;
     box-shadow: 2mm 2mm 8mm rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    gap: 2.5mm;
+    display: flex; flex-direction: column; gap: 2mm;
   }
 
-  /* Header */
   .header {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: grid; grid-template-columns: 1fr auto;
     border-bottom: 1mm solid var(--red);
-    padding-bottom: 2mm;
-    align-items: end;
+    padding-bottom: 1.5mm; align-items: end;
   }
-  .game-title { font-family: var(--ff-title); font-size: 20px; font-weight: bold; color: var(--red); letter-spacing: 0.08em; }
-  .sheet-label { font-family: var(--ff-title); font-size: 10px; color: var(--ink-mid); font-style: italic; }
-  .kanji { font-size: 22px; color: var(--red); opacity: 0.3; }
+  .game-title { font-family: var(--ff-title); font-size: 18px; font-weight: bold; color: var(--red); letter-spacing: 0.08em; }
+  .sheet-label { font-family: var(--ff-title); font-size: 9px; color: var(--ink-mid); font-style: italic; }
+  .kanji { font-size: 20px; color: var(--red); opacity: 0.3; }
+  .page-label { font-size: 7px; color: var(--ink-faint); text-align: right; display: block; }
 
-  /* Panels */
   .panel { background: var(--paper-mid); border: 0.3mm solid var(--rule); border-radius: 0.5mm; overflow: hidden; }
-  .panel-head { background: var(--ink-mid); color: var(--paper); font-family: var(--ff-title); font-size: 8.5px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; padding: 1mm 2mm; }
+  .panel-head { background: var(--ink-mid); color: var(--paper); font-family: var(--ff-title); font-size: 8px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8mm 2mm; }
   .panel-head.red  { background: var(--red); }
   .panel-head.gold { background: var(--gold); }
-  .panel-body { padding: 1.5mm 2mm; }
+  .panel-body { padding: 1.2mm 2mm; }
 
-  /* Layout */
-  .row { display: flex; gap: 2.5mm; }
+  .row { display: flex; gap: 2mm; }
   .row > * { flex: 1; }
+  .col { display: flex; flex-direction: column; gap: 2mm; }
 
-  /* Field lines */
-  .field-row { display: grid; grid-template-columns: var(--label-w, 28mm) 1fr; align-items: end; margin-bottom: 1.8mm; gap: 1mm; }
-  .field-label { font-size: 8px; font-weight: bold; color: var(--ink-mid); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
-  .field-line { border-bottom: 0.3mm solid var(--ink-mid); min-width: 10mm; height: 3.5mm; }
-  .field-row.wide { --label-w: 18mm; }
-  .field-row.narrow { --label-w: 16mm; }
+  .field-row { display: grid; grid-template-columns: var(--label-w, 26mm) 1fr; align-items: end; margin-bottom: 1.5mm; gap: 1mm; }
+  .field-label { font-size: 7.5px; font-weight: bold; color: var(--ink-mid); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  .field-line { border-bottom: 0.3mm solid var(--ink-mid); height: 3.2mm; }
+  .field-row.wide { --label-w: 16mm; }
+  .field-row.narrow { --label-w: 14mm; }
 
-  /* Attribute boxes */
   .attr-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.5mm; }
-  .attr-box { border: 0.3mm solid var(--rule); border-radius: 0.5mm; text-align: center; padding: 1mm 0.5mm; }
-  .attr-name { font-size: 7.5px; font-weight: bold; color: var(--red); text-transform: uppercase; letter-spacing: 0.05em; display: block; border-bottom: 0.2mm solid var(--rule); padding-bottom: 0.5mm; margin-bottom: 1mm; }
-  .attr-die { width: 12mm; height: 4mm; border-bottom: 0.3mm solid var(--ink); display: inline-block; }
+  .attr-box { border: 0.3mm solid var(--rule); border-radius: 0.5mm; text-align: center; padding: 0.8mm 0.5mm; }
+  .attr-name { font-size: 7px; font-weight: bold; color: var(--red); text-transform: uppercase; letter-spacing: 0.05em; display: block; border-bottom: 0.2mm solid var(--rule); padding-bottom: 0.3mm; margin-bottom: 0.8mm; }
+  .attr-die { width: 12mm; height: 3.5mm; border-bottom: 0.3mm solid var(--ink); display: inline-block; }
 
-  /* Derived stats */
   .derived-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5mm; }
-  .derived-box { border: 0.3mm solid var(--rule); border-radius: 0.5mm; text-align: center; padding: 1mm; }
-  .derived-name { font-size: 7.5px; font-weight: bold; color: var(--ink-mid); display: block; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1mm; }
-  .derived-val { height: 4.5mm; border-bottom: 0.3mm solid var(--ink); display: block; }
+  .derived-box { border: 0.3mm solid var(--rule); border-radius: 0.5mm; text-align: center; padding: 0.8mm; }
+  .derived-name { font-size: 7px; font-weight: bold; color: var(--ink-mid); display: block; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8mm; }
+  .derived-val { height: 4mm; border-bottom: 0.3mm solid var(--ink); display: block; }
 
-  /* On score */
-  .on-row { display: grid; grid-template-columns: 20mm 1fr 30mm; gap: 2mm; align-items: center; }
-  .on-score-box { border: 0.5mm solid var(--red); border-radius: 0.5mm; text-align: center; padding: 1mm; background: rgba(139,26,26,0.06); }
-  .on-score-label { font-size: 7.5px; font-weight: bold; color: var(--red); display: block; margin-bottom: 0.5mm; }
-  .on-score-num { font-size: 20px; font-weight: bold; color: var(--red); height: 8mm; display: block; border-bottom: 0.4mm solid var(--red); }
-  .on-track { display: grid; grid-template-columns: repeat(10,1fr); gap: 0.8mm; }
-  .on-pip { width: 100%; aspect-ratio: 1; border: 0.3mm solid var(--rule); border-radius: 50%; background: var(--paper); font-size: 6.5px; color: var(--ink-faint); display: flex; align-items: center; justify-content: center; }
+  .on-row { display: grid; grid-template-columns: 18mm 1fr; gap: 2mm; align-items: center; }
+  .on-score-box { border: 0.5mm solid var(--red); border-radius: 0.5mm; text-align: center; padding: 0.8mm; background: rgba(139,26,26,0.06); }
+  .on-score-label { font-size: 7px; font-weight: bold; color: var(--red); display: block; margin-bottom: 0.3mm; }
+  .on-score-num { font-size: 18px; font-weight: bold; color: var(--red); height: 7mm; display: block; border-bottom: 0.4mm solid var(--red); }
+  .on-track { display: grid; grid-template-columns: repeat(10,1fr); gap: 0.6mm; }
+  .on-pip { width: 100%; aspect-ratio: 1; border: 0.3mm solid var(--rule); border-radius: 50%; background: var(--paper); font-size: 6px; color: var(--ink-faint); display: flex; align-items: center; justify-content: center; }
 
-  /* Skill table */
   .skill-table { width: 100%; border-collapse: collapse; }
-  .skill-table th { font-size: 7.5px; font-weight: bold; color: var(--ink-mid); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 0.3mm solid var(--rule); padding: 0.5mm 1mm; text-align: left; }
-  .skill-table td { padding: 0.4mm 1mm; border-bottom: 0.15mm solid rgba(180,150,100,0.25); font-size: 8.5px; vertical-align: middle; }
-  .skill-link { font-size: 7px; color: var(--ink-faint); }
-  .skill-die-box { width: 14mm; height: 3.5mm; border-bottom: 0.3mm solid var(--ink-mid); display: inline-block; }
+  .skill-table th { font-size: 7px; font-weight: bold; color: var(--ink-mid); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 0.3mm solid var(--rule); padding: 0.4mm 1mm; text-align: left; }
+  .skill-table td { padding: 0.3mm 1mm; border-bottom: 0.15mm solid rgba(180,150,100,0.25); font-size: 8px; vertical-align: middle; }
+  .skill-link { font-size: 6.5px; color: var(--ink-faint); }
+  .skill-die-box { width: 12mm; height: 3mm; border-bottom: 0.3mm solid var(--ink-mid); display: inline-block; }
   .skill-table tr:nth-child(even) td { background: rgba(0,0,0,0.025); }
 
-  /* Bugei tiers */
-  .bugei-tier { margin-bottom: 1mm; }
-  .bugei-tier-label { font-size: 7.5px; font-weight: bold; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5mm; display: flex; align-items: center; gap: 1mm; }
+  .bugei-tier { margin-bottom: 1.5mm; }
+  .bugei-tier-label { font-size: 6.5px; font-weight: bold; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5mm; display: flex; align-items: center; gap: 1mm; }
   .bugei-tier-label::after { content: ''; flex: 1; border-top: 0.2mm solid var(--red-light); }
-  .bugei-slots { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.8mm; }
-  .bugei-slot { border: 0.3mm solid var(--rule); border-radius: 0.3mm; height: 4mm; font-size: 7.5px; padding: 0 1mm; display: flex; align-items: center; }
+  .bugei-slot-full { border: 0.3mm solid var(--rule); border-radius: 0.3mm; margin-bottom: 0.8mm; overflow: hidden; }
+  .bugei-slot-name { border-bottom: 0.25mm solid var(--rule); height: 3.5mm; padding: 0 1mm; font-size: 7.5px; display: flex; align-items: center; background: rgba(0,0,0,0.02); }
+  .bugei-slot-desc { height: 4mm; padding: 0 1mm; font-size: 7px; color: var(--ink-faint); display: flex; align-items: center; }
+  .bugei-slot-desc::before { content: 'Notes: '; font-weight: bold; margin-right: 1mm; }
 
-  /* Conditions */
-  .condition-row { display: flex; gap: 1.5mm; align-items: center; margin-bottom: 0.8mm; }
-  .condition-label { font-size: 7.5px; font-weight: bold; color: var(--ink-mid); width: 14mm; }
-  .condition-boxes { display: flex; gap: 0.8mm; }
-  .cbox { width: 5.5mm; height: 5.5mm; border: 0.3mm solid var(--rule); border-radius: 0.3mm; background: var(--paper); }
-  .cbox.wound { border-color: var(--red); }
-
-  /* Bennies */
-  .bennies { display: flex; gap: 1mm; align-items: center; }
-  .benny-circle { width: 6mm; height: 6mm; border-radius: 50%; border: 0.4mm solid var(--gold); background: rgba(184,144,42,0.08); }
-
-  /* PP tracker */
-  .pp-row { display: flex; gap: 2mm; align-items: center; }
-  .pp-box { border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 0.5mm 1mm; text-align: center; flex: 1; }
-  .pp-label { font-size: 7px; color: var(--ink-faint); text-transform: uppercase; }
-  .pp-val { font-size: 9px; font-weight: bold; height: 4mm; border-bottom: 0.3mm solid var(--ink); display: block; }
-
-  /* Zanshin chain */
   .chain-compact { display: flex; gap: 0.5mm; align-items: center; }
-  .chain-node { flex: 1; text-align: center; border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 0.5mm; font-size: 7px; }
+  .chain-node { flex: 1; text-align: center; border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 0.4mm; font-size: 6.5px; }
   .chain-arrow { color: var(--ink-faint); font-size: 8px; }
 
-  /* Script skills */
   .script-row { display: flex; gap: 1.5mm; }
-  .script-item { flex: 1; text-align: center; border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 0.5mm; }
-  .script-name { font-size: 7px; color: var(--red); font-weight: bold; }
-  .script-die { height: 3mm; border-bottom: 0.3mm solid var(--ink); margin-top: 0.5mm; }
+  .script-item { flex: 1; text-align: center; border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 0.4mm; }
+  .script-name { font-size: 6.5px; color: var(--red); font-weight: bold; }
+  .script-die { height: 3mm; border-bottom: 0.3mm solid var(--ink); margin-top: 0.3mm; }
 
-  /* Gear */
-  .gear-line { border-bottom: 0.25mm solid rgba(180,150,100,0.4); height: 4mm; width: 100%; margin-bottom: 0.5mm; }
+  .condition-row { display: flex; gap: 1.5mm; align-items: center; margin-bottom: 0.7mm; }
+  .condition-label { font-size: 7px; font-weight: bold; color: var(--ink-mid); width: 13mm; }
+  .condition-boxes { display: flex; gap: 0.8mm; }
+  .cbox { width: 5mm; height: 5mm; border: 0.3mm solid var(--rule); border-radius: 0.3mm; background: var(--paper); }
+  .cbox.wound { border-color: var(--red); }
+  .bennies { display: flex; gap: 1mm; align-items: center; }
+  .benny-circle { width: 5.5mm; height: 5.5mm; border-radius: 50%; border: 0.4mm solid var(--gold); background: rgba(184,144,42,0.08); }
 
-  /* Notes */
+  .gear-line { border-bottom: 0.25mm solid rgba(180,150,100,0.4); height: 3.5mm; width: 100%; margin-bottom: 0.4mm; }
+
+  .log-table { width: 100%; border-collapse: collapse; font-size: 8px; }
+  .log-table th { background: var(--ink-mid); color: var(--paper); padding: 0.6mm 1.5mm; text-align: left; font-size: 7.5px; letter-spacing: 0.05em; }
+  .log-table td { padding: 0.5mm 1.5mm; border-bottom: 0.2mm solid rgba(180,150,100,0.3); height: 4.5mm; vertical-align: middle; }
+  .log-table tr:nth-child(even) td { background: rgba(0,0,0,0.025); }
+
+  .org-block { border: 0.3mm solid var(--rule); border-radius: 0.3mm; margin-bottom: 1.5mm; overflow: hidden; }
+  .org-head { background: rgba(0,0,0,0.06); padding: 0.8mm 1.5mm; border-bottom: 0.2mm solid var(--rule); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2mm; }
+  .org-name-label { font-size: 7px; font-weight: bold; color: var(--ink-mid); text-transform: uppercase; margin-bottom: 0.3mm; }
+  .org-rank-row { display: flex; gap: 1mm; align-items: center; }
+  .org-rank-pip { width: 5mm; height: 5mm; border: 0.3mm solid var(--rule); border-radius: 50%; background: var(--paper); font-size: 6px; color: var(--ink-faint); display: flex; align-items: center; justify-content: center; }
+  .org-fields { padding: 0.8mm 1.5mm; display: grid; grid-template-columns: 1fr 1fr; gap: 0 2mm; }
+
+  .xp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm; }
+  .xp-box { border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 1mm; }
+  .xp-label { font-size: 7px; font-weight: bold; color: var(--ink-mid); text-transform: uppercase; margin-bottom: 0.5mm; display: block; }
+  .xp-val { height: 4mm; border-bottom: 0.3mm solid var(--ink); display: block; }
+  .advance-table { width: 100%; border-collapse: collapse; margin-top: 1mm; font-size: 7.5px; }
+  .advance-table th { background: rgba(0,0,0,0.06); padding: 0.4mm 1mm; text-align: left; font-size: 7px; border-bottom: 0.2mm solid var(--rule); }
+  .advance-table td { padding: 0.4mm 1mm; border-bottom: 0.15mm solid rgba(180,150,100,0.25); height: 4mm; }
+
+  .ki-track { display: flex; gap: 0.8mm; margin: 1mm 0; }
+  .ki-pip { width: 6mm; height: 6mm; border: 0.3mm solid var(--red); border-radius: 50%; background: rgba(139,26,26,0.06); font-size: 6.5px; color: var(--red); display: flex; align-items: center; justify-content: center; }
+  .ki-power-row { display: grid; grid-template-columns: 1fr auto; gap: 1mm; margin-bottom: 0.8mm; align-items: center; font-size: 8px; }
+  .ki-power-name { font-weight: bold; color: var(--ink-mid); }
+  .ki-power-cost { font-size: 6.5px; color: var(--ink-faint); }
+
+  .text-row { display: grid; grid-template-columns: 4.5mm 1fr 16mm 8mm; gap: 1mm; align-items: center; margin-bottom: 0.8mm; font-size: 7.5px; padding-bottom: 0.5mm; border-bottom: 0.15mm solid rgba(180,150,100,0.2); }
+  .text-check { width: 4mm; height: 4mm; border: 0.3mm solid var(--rule); border-radius: 0.2mm; background: var(--paper); }
+  .text-tradition { font-size: 6.5px; color: var(--ink-faint); }
+  .text-scene { display: flex; gap: 0.5mm; justify-content: center; }
+  .scene-box { width: 4mm; height: 4mm; border: 0.3mm solid var(--rule); border-radius: 50%; background: var(--paper); }
+
+  .arcane-power-row { display: grid; grid-template-columns: 4.5mm 1fr 10mm 22mm; gap: 1mm; align-items: center; margin-bottom: 0.6mm; font-size: 8px; border-bottom: 0.15mm solid rgba(180,150,100,0.2); padding-bottom: 0.4mm; }
+  .arcane-power-line { border-bottom: 0.3mm solid var(--ink-mid); height: 3.5mm; }
+
+  .pp-row { display: flex; gap: 2mm; }
+  .pp-box { border: 0.3mm solid var(--rule); border-radius: 0.3mm; padding: 0.5mm 1mm; text-align: center; flex: 1; }
+  .pp-label { font-size: 6.5px; color: var(--ink-faint); text-transform: uppercase; }
+  .pp-val { font-size: 9px; font-weight: bold; height: 3.5mm; border-bottom: 0.3mm solid var(--ink); display: block; }
+
   .notes-area {
-    flex: 1; min-height: 15mm;
+    flex: 1; min-height: 20mm;
     border: 0.3mm solid var(--rule); border-radius: 0.3mm;
     background: var(--paper);
     background-image: repeating-linear-gradient(transparent, transparent 3.8mm, rgba(180,150,100,0.25) 3.8mm, rgba(180,150,100,0.25) 4mm);
@@ -175,7 +173,8 @@
   @media print {
     .print-bar { display: none; }
     body { background: white; }
-    .page { margin: 0; box-shadow: none; min-height: 0; }
+    .page { margin: 0; box-shadow: none; min-height: 0; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
   }
   @page { size: letter portrait; margin: 4mm; }
 </style>
@@ -183,19 +182,22 @@
 <body>
 
 <div class="print-bar">
-  <span>武士道 Savage Bushido — Character Sheet</span>
-  <button class="print-btn" onclick="window.print()">⎙ Print / Save as PDF</button>
+  <span>武士道 Savage Bushido — Character Sheet (2 pages, US Letter)</span>
+  <button class="print-btn" onclick="window.print()">&#9113; Print / Save as PDF</button>
 </div>
 
+<!-- PAGE ONE -->
 <div class="page">
 
-  <!-- HEADER -->
   <div class="header">
     <div>
       <div class="game-title">SAVAGE BUSHIDO</div>
       <div class="sheet-label">Character Record — Warring-States Nippon</div>
     </div>
-    <div class="kanji">武士道</div>
+    <div>
+      <div class="kanji">&#27494;&#22763;&#36947;</div>
+      <span class="page-label">Page 1 of 2</span>
+    </div>
   </div>
 
   <!-- IDENTITY + ON -->
@@ -209,13 +211,12 @@
           <div class="field-row narrow"><span class="field-label">Birth</span><div class="field-line"></div></div>
           <div class="field-row narrow"><span class="field-label">Profession</span><div class="field-line"></div></div>
           <div class="field-row narrow"><span class="field-label">Rank</span><div class="field-line"></div></div>
-          <div class="field-row narrow"><span class="field-label">Group Rank</span><div class="field-line"></div></div>
+          <div class="field-row narrow"><span class="field-label">Wild Die</span><div class="field-line"></div></div>
         </div>
       </div>
     </div>
-
-    <div class="panel" style="flex:1.4;">
-      <div class="panel-head red">On — Honor Score</div>
+    <div class="panel" style="flex:1.3;">
+      <div class="panel-head red">On &#8212; Honor Score</div>
       <div class="panel-body">
         <div class="on-row">
           <div class="on-score-box">
@@ -223,7 +224,7 @@
             <span class="on-score-num"></span>
           </div>
           <div>
-            <div class="on-track" style="margin-bottom:1mm;">
+            <div class="on-track" style="margin-bottom:0.8mm;">
               <div class="on-pip">1</div><div class="on-pip">2</div><div class="on-pip">3</div><div class="on-pip">4</div><div class="on-pip">5</div>
               <div class="on-pip">6</div><div class="on-pip">7</div><div class="on-pip">8</div><div class="on-pip">9</div><div class="on-pip">10</div>
             </div>
@@ -233,12 +234,12 @@
             </div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5mm;margin-top:1mm;text-align:center;">
-          <div style="font-size:7px;color:var(--red);">1–4<br>−2</div>
-          <div style="font-size:7px;color:var(--ink-mid);">5–7<br>−1</div>
-          <div style="font-size:7px;color:var(--ink-mid);">8–12<br>±0</div>
-          <div style="font-size:7px;color:var(--ink-mid);">13–16<br>+1</div>
-          <div style="font-size:7px;color:var(--gold);">17–20<br>+2</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5mm;margin-top:0.8mm;text-align:center;">
+          <div style="font-size:6.5px;color:var(--red);">1&#8211;4<br>&#8722;2</div>
+          <div style="font-size:6.5px;color:var(--ink-mid);">5&#8211;7<br>&#8722;1</div>
+          <div style="font-size:6.5px;color:var(--ink-mid);">8&#8211;12<br>&#177;0</div>
+          <div style="font-size:6.5px;color:var(--ink-mid);">13&#8211;16<br>+1</div>
+          <div style="font-size:6.5px;color:var(--gold);">17&#8211;20<br>+2</div>
         </div>
       </div>
     </div>
@@ -248,7 +249,7 @@
   <div class="panel">
     <div class="panel-head">Attributes &amp; Derived Statistics</div>
     <div class="panel-body">
-      <div class="attr-grid" style="margin-bottom:1.5mm;">
+      <div class="attr-grid" style="margin-bottom:1.2mm;">
         <div class="attr-box"><span class="attr-name">Agility</span><span class="attr-die"></span></div>
         <div class="attr-box"><span class="attr-name">Smarts</span><span class="attr-die"></span></div>
         <div class="attr-box"><span class="attr-name">Spirit</span><span class="attr-die"></span></div>
@@ -265,25 +266,25 @@
   </div>
 
   <!-- SKILLS + RIGHT COLUMN -->
-  <div class="row">
+  <div class="row" style="flex:1;">
     <div class="panel" style="flex:1.1;">
       <div class="panel-head">Skills</div>
       <div class="panel-body" style="padding:1mm 1.5mm;">
         <table class="skill-table">
-          <tr><th style="width:28mm">Skill</th><th style="width:8mm">Link</th><th style="width:14mm">Die</th></tr>
+          <tr><th style="width:26mm">Skill</th><th style="width:7mm">Link</th><th style="width:12mm">Die</th></tr>
           <tr><td>Athletics</td><td class="skill-link">Ag</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Boating</td><td class="skill-link">Ag</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Butsudo</td><td class="skill-link">Sp</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Common Knowledge</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
-          <tr><td>Craft [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
+          <tr><td>Craft [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Driving</td><td class="skill-link">Ag</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Fighting</td><td class="skill-link">Ag</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Gambling</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Healing</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Intimidation</td><td class="skill-link">Sp</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Investigation</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
-          <tr><td>Knowledge [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
-          <tr><td>Knowledge [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
+          <tr><td>Knowledge [&nbsp;&nbsp;&nbsp;&nbsp;]</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
+          <tr><td>Knowledge [&nbsp;&nbsp;&nbsp;&nbsp;]</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Notice</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Perform</td><td class="skill-link">Sp</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Riding</td><td class="skill-link">Ag</td><td><span class="skill-die-box"></span></td></tr>
@@ -297,8 +298,8 @@
           <tr><td>Taunt</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
           <tr><td>Warfare</td><td class="skill-link">Sm</td><td><span class="skill-die-box"></span></td></tr>
         </table>
-        <div style="margin-top:1.5mm;">
-          <div style="font-size:7.5px;font-weight:bold;color:var(--red);margin-bottom:0.5mm;">Scripts</div>
+        <div style="margin-top:1mm;">
+          <div style="font-size:7px;font-weight:bold;color:var(--red);margin-bottom:0.4mm;">Scripts</div>
           <div class="script-row">
             <div class="script-item"><div class="script-name">Katakana</div><div class="script-die"></div></div>
             <div class="script-item"><div class="script-name">Hiragana</div><div class="script-die"></div></div>
@@ -308,48 +309,39 @@
       </div>
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div style="flex:1.3;display:flex;flex-direction:column;gap:2mm;">
+    <div style="flex:1.4;display:flex;flex-direction:column;gap:2mm;">
 
       <div class="panel">
-        <div class="panel-head gold">Bugei — Martial Arts</div>
+        <div class="panel-head gold">Bugei &#8212; Martial Arts</div>
         <div class="panel-body">
           <div class="bugei-tier">
-            <div class="bugei-tier-label" style="font-size:7px;">Tier 1 — Category Omote (Birth)</div>
-            <div class="bugei-slots">
-              <div class="bugei-slot"></div>
-              <div class="bugei-slot"></div>
-              <div class="bugei-slot"></div>
-            </div>
+            <div class="bugei-tier-label">Tier 1 &#8212; Category Omote (Birth)</div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
           </div>
           <div class="bugei-tier">
-            <div class="bugei-tier-label" style="font-size:7px;">Tier 2 — Specialist (Profession)</div>
-            <div class="bugei-slots">
-              <div class="bugei-slot"></div>
-              <div class="bugei-slot"></div>
-              <div class="bugei-slot"></div>
-            </div>
+            <div class="bugei-tier-label">Tier 2 &#8212; Specialist (Profession)</div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
           </div>
           <div class="bugei-tier">
-            <div class="bugei-tier-label" style="font-size:7px;">Tier 3 — Okuden (Teacher Required)</div>
-            <div class="bugei-slots">
-              <div class="bugei-slot"></div>
-              <div class="bugei-slot"></div>
-              <div class="bugei-slot"></div>
-            </div>
+            <div class="bugei-tier-label">Tier 3 &#8212; Okuden (Teacher Required)</div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
+            <div class="bugei-slot-full"><div class="bugei-slot-name"></div><div class="bugei-slot-desc"></div></div>
           </div>
           <div class="bugei-tier">
-            <div class="bugei-tier-label" style="font-size:7px;">Zanshin Chain</div>
+            <div class="bugei-tier-label">Zanshin Chain</div>
             <div class="chain-compact">
-              <div class="chain-node">Mushin<br><span style="font-size:6px;color:var(--ink-faint);">Nov</span></div>
-              <div class="chain-arrow">›</div>
-              <div class="chain-node">Zanshin<br><span style="font-size:6px;color:var(--ink-faint);">Sea</span></div>
-              <div class="chain-arrow">›</div>
-              <div class="chain-node">Fudoshin<br><span style="font-size:6px;color:var(--ink-faint);">Vet</span></div>
-              <div class="chain-arrow">›</div>
-              <div class="chain-node">Shoshin<br><span style="font-size:6px;color:var(--ink-faint);">Her</span></div>
-              <div class="chain-arrow">›</div>
-              <div class="chain-node">Z.Kanzen<br><span style="font-size:6px;color:var(--ink-faint);">Leg</span></div>
+              <div class="chain-node">Mushin<br><span style="font-size:5.5px;color:var(--ink-faint);">Nov</span></div>
+              <div class="chain-arrow">&#8250;</div>
+              <div class="chain-node">Zanshin<br><span style="font-size:5.5px;color:var(--ink-faint);">Sea</span></div>
+              <div class="chain-arrow">&#8250;</div>
+              <div class="chain-node">Fudoshin<br><span style="font-size:5.5px;color:var(--ink-faint);">Vet</span></div>
+              <div class="chain-arrow">&#8250;</div>
+              <div class="chain-node">Shoshin<br><span style="font-size:5.5px;color:var(--ink-faint);">Her</span></div>
+              <div class="chain-arrow">&#8250;</div>
+              <div class="chain-node">Z.Kanzen<br><span style="font-size:5.5px;color:var(--ink-faint);">Leg</span></div>
             </div>
           </div>
         </div>
@@ -361,130 +353,311 @@
           <div class="condition-row">
             <span class="condition-label">Wounds</span>
             <div class="condition-boxes">
-              <div class="cbox wound"></div>
-              <div class="cbox wound"></div>
-              <div class="cbox wound"></div>
-              <div style="font-size:7.5px;color:var(--red);align-self:center;margin-left:1mm;">Incap</div>
+              <div class="cbox wound"></div><div class="cbox wound"></div><div class="cbox wound"></div>
+              <div style="font-size:7px;color:var(--red);align-self:center;margin-left:1mm;">Incap</div>
             </div>
           </div>
           <div class="condition-row">
             <span class="condition-label">Fatigue</span>
             <div class="condition-boxes">
-              <div class="cbox"></div>
-              <div class="cbox"></div>
-              <div style="font-size:7.5px;color:var(--ink-mid);align-self:center;margin-left:1mm;">Incap</div>
+              <div class="cbox"></div><div class="cbox"></div>
+              <div style="font-size:7px;color:var(--ink-mid);align-self:center;margin-left:1mm;">Incap</div>
             </div>
           </div>
           <div class="condition-row">
             <span class="condition-label">Bennies</span>
             <div class="bennies">
-              <div class="benny-circle"></div>
-              <div class="benny-circle"></div>
-              <div class="benny-circle"></div>
-              <div class="benny-circle"></div>
+              <div class="benny-circle"></div><div class="benny-circle"></div>
+              <div class="benny-circle"></div><div class="benny-circle"></div>
             </div>
           </div>
-          <hr style="border:none;border-top:0.2mm solid var(--rule);margin:1mm 0;">
+          <hr style="border:none;border-top:0.2mm solid var(--rule);margin:0.8mm 0;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5mm;">
             <div>
-              <div style="font-size:7.5px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.5mm;">Pollution (Buddhist)</div>
-              <div style="display:flex;gap:0.8mm;">
+              <div style="font-size:7px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.4mm;">Pollution (Buddhist)</div>
+              <div style="display:flex;gap:0.6mm;">
                 <div class="cbox"></div><div class="cbox"></div><div class="cbox"></div><div class="cbox"></div><div class="cbox"></div>
               </div>
-              <div style="font-size:7px;color:var(--ink-faint);margin-top:0.3mm;">0 · 1–2(−1) · 3–4(−2) · 5+(−4)</div>
+              <div style="font-size:6.5px;color:var(--ink-faint);margin-top:0.3mm;">0&#183;1&#8211;2(&#8722;1)&#183;3&#8211;4(&#8722;2)&#183;5+(&#8722;4)</div>
             </div>
             <div>
-              <div style="font-size:7.5px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.5mm;">Kegare (Shinto)</div>
-              <div style="display:flex;gap:0.8mm;">
+              <div style="font-size:7px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.4mm;">Kegare (Shinto)</div>
+              <div style="display:flex;gap:0.6mm;">
                 <div class="cbox"></div><div class="cbox"></div><div class="cbox"></div><div class="cbox"></div><div class="cbox"></div>
               </div>
-              <div style="font-size:7px;color:var(--ink-faint);margin-top:0.3mm;">0 · 1–2(−1) · 3–4(−2) · 5+(−4)</div>
+              <div style="font-size:6.5px;color:var(--ink-faint);margin-top:0.3mm;">0&#183;1&#8211;2(&#8722;1)&#183;3&#8211;4(&#8722;2)&#183;5+(&#8722;4)</div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="panel" style="flex:1.2;">
+          <div class="panel-head">Edges</div>
+          <div class="panel-body">
+            <div class="gear-line"></div><div class="gear-line"></div>
+            <div class="gear-line"></div><div class="gear-line"></div>
+            <div class="gear-line"></div><div class="gear-line"></div>
+          </div>
+        </div>
+        <div class="panel" style="flex:0.8;">
+          <div class="panel-head">Hindrances</div>
+          <div class="panel-body">
+            <div class="gear-line"></div><div class="gear-line"></div>
+            <div class="gear-line"></div><div class="gear-line"></div>
           </div>
         </div>
       </div>
 
       <div class="panel">
-        <div class="panel-head red">Powers &amp; Power Points</div>
+        <div class="panel-head">Gear &amp; Equipment</div>
         <div class="panel-body">
-          <div class="pp-row">
-            <div class="pp-box"><span class="pp-label">Current PP</span><span class="pp-val"></span></div>
-            <div class="pp-box"><span class="pp-label">Max PP</span><span class="pp-val"></span></div>
-            <div class="pp-box"><span class="pp-label">Ki PP (sep.)</span><span class="pp-val"></span></div>
-          </div>
-          <div style="margin-top:1.5mm;">
-            <div style="font-size:7.5px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.5mm;">Known Powers</div>
-            <div class="gear-line"></div>
-            <div class="gear-line"></div>
-            <div class="gear-line"></div>
-            <div class="gear-line"></div>
-            <div class="gear-line"></div>
-            <div class="gear-line"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- EDGES / HINDRANCES / GEAR -->
-  <div class="row">
-    <div class="panel" style="flex:1;">
-      <div class="panel-head">Edges</div>
-      <div class="panel-body">
-        <div class="gear-line"></div><div class="gear-line"></div>
-        <div class="gear-line"></div><div class="gear-line"></div>
-        <div class="gear-line"></div><div class="gear-line"></div>
-        <div class="gear-line"></div><div class="gear-line"></div>
-      </div>
-    </div>
-    <div class="panel" style="flex:0.7;">
-      <div class="panel-head">Hindrances</div>
-      <div class="panel-body">
-        <div class="gear-line"></div><div class="gear-line"></div>
-        <div class="gear-line"></div><div class="gear-line"></div>
-        <div class="gear-line"></div><div class="gear-line"></div>
-      </div>
-    </div>
-    <div class="panel" style="flex:1.2;">
-      <div class="panel-head">Gear &amp; Equipment</div>
-      <div class="panel-body">
-        <table class="skill-table">
-          <tr><th style="width:28mm">Item</th><th>Stats / Notes</th></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-          <tr><td style="height:4mm;"></td><td></td></tr>
-        </table>
-        <div style="margin-top:1mm;display:grid;grid-template-columns:1fr 1fr;gap:1mm;">
-          <div>
-            <div style="font-size:7.5px;font-weight:bold;color:var(--ink-mid);">Currency</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5mm;margin-top:0.5mm;">
-              <div><div style="font-size:7px;color:var(--gold);">Ryo</div><div class="field-line" style="margin:0;"></div></div>
-              <div><div style="font-size:7px;color:var(--ink-mid);">Shu</div><div class="field-line" style="margin:0;"></div></div>
-              <div><div style="font-size:7px;color:var(--ink-faint);">Mon</div><div class="field-line" style="margin:0;"></div></div>
+          <table class="skill-table">
+            <tr><th style="width:26mm">Item</th><th>Damage / Notes</th></tr>
+            <tr><td style="height:3.5mm;"></td><td></td></tr>
+            <tr><td style="height:3.5mm;"></td><td></td></tr>
+            <tr><td style="height:3.5mm;"></td><td></td></tr>
+            <tr><td style="height:3.5mm;"></td><td></td></tr>
+            <tr><td style="height:3.5mm;"></td><td></td></tr>
+          </table>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1mm;margin-top:1mm;">
+            <div>
+              <div style="font-size:7px;font-weight:bold;color:var(--ink-mid);">Currency</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5mm;margin-top:0.4mm;">
+                <div><div style="font-size:6.5px;color:var(--gold);">Ryo</div><div class="field-line" style="margin:0;"></div></div>
+                <div><div style="font-size:6.5px;color:var(--ink-mid);">Shu</div><div class="field-line" style="margin:0;"></div></div>
+                <div><div style="font-size:6.5px;color:var(--ink-faint);">Mon</div><div class="field-line" style="margin:0;"></div></div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:7px;font-weight:bold;color:var(--ink-mid);">Encumbrance</div>
+              <div class="field-line" style="margin-top:0.4mm;"></div>
             </div>
           </div>
-          <div>
-            <div style="font-size:7.5px;font-weight:bold;color:var(--ink-mid);">Encumbrance</div>
-            <div class="field-line" style="margin-top:0.5mm;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- PAGE TWO -->
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="game-title">SAVAGE BUSHIDO</div>
+      <div class="sheet-label">Character Detail &#8212; Page 2</div>
+    </div>
+    <div>
+      <div class="kanji">&#27494;&#22763;&#36947;</div>
+      <span class="page-label">Page 2 of 2</span>
+    </div>
+  </div>
+
+  <div class="row" style="flex:1;align-items:stretch;">
+
+    <!-- LEFT COLUMN -->
+    <div class="col" style="flex:1.1;">
+
+      <div class="panel">
+        <div class="panel-head red">On History Log</div>
+        <div class="panel-body" style="padding:1mm 1.5mm;">
+          <table class="log-table">
+            <tr>
+              <th style="width:16mm;">Session</th>
+              <th>Event / Reason</th>
+              <th style="width:10mm;">+/&#8722;</th>
+              <th style="width:14mm;">New Total</th>
+            </tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head gold">Organization Tracker</div>
+        <div class="panel-body" style="padding:1mm 1.5mm;">
+
+          <div class="org-block">
+            <div class="org-head">
+              <div><div class="org-name-label">Organization</div><div class="field-line" style="width:38mm;margin-top:0.3mm;"></div></div>
+              <div>
+                <div style="font-size:6.5px;color:var(--ink-faint);margin-bottom:0.3mm;text-align:center;">Group Rank</div>
+                <div class="org-rank-row">
+                  <div class="org-rank-pip">0</div><div class="org-rank-pip">1</div><div class="org-rank-pip">2</div>
+                  <div class="org-rank-pip">3</div><div class="org-rank-pip">4</div><div class="org-rank-pip">5</div>
+                </div>
+              </div>
+            </div>
+            <div class="org-fields">
+              <div class="field-row narrow" style="margin-bottom:0.8mm;"><span class="field-label">Title</span><div class="field-line"></div></div>
+              <div class="field-row narrow" style="margin-bottom:0.8mm;"><span class="field-label">Notes</span><div class="field-line"></div></div>
+            </div>
+          </div>
+
+          <div class="org-block">
+            <div class="org-head">
+              <div><div class="org-name-label">Organization</div><div class="field-line" style="width:38mm;margin-top:0.3mm;"></div></div>
+              <div>
+                <div style="font-size:6.5px;color:var(--ink-faint);margin-bottom:0.3mm;text-align:center;">Group Rank</div>
+                <div class="org-rank-row">
+                  <div class="org-rank-pip">0</div><div class="org-rank-pip">1</div><div class="org-rank-pip">2</div>
+                  <div class="org-rank-pip">3</div><div class="org-rank-pip">4</div><div class="org-rank-pip">5</div>
+                </div>
+              </div>
+            </div>
+            <div class="org-fields">
+              <div class="field-row narrow" style="margin-bottom:0.8mm;"><span class="field-label">Title</span><div class="field-line"></div></div>
+              <div class="field-row narrow" style="margin-bottom:0.8mm;"><span class="field-label">Notes</span><div class="field-line"></div></div>
+            </div>
+          </div>
+
+          <div class="org-block">
+            <div class="org-head">
+              <div><div class="org-name-label">Organization</div><div class="field-line" style="width:38mm;margin-top:0.3mm;"></div></div>
+              <div>
+                <div style="font-size:6.5px;color:var(--ink-faint);margin-bottom:0.3mm;text-align:center;">Group Rank</div>
+                <div class="org-rank-row">
+                  <div class="org-rank-pip">0</div><div class="org-rank-pip">1</div><div class="org-rank-pip">2</div>
+                  <div class="org-rank-pip">3</div><div class="org-rank-pip">4</div><div class="org-rank-pip">5</div>
+                </div>
+              </div>
+            </div>
+            <div class="org-fields">
+              <div class="field-row narrow" style="margin-bottom:0.8mm;"><span class="field-label">Title</span><div class="field-line"></div></div>
+              <div class="field-row narrow" style="margin-bottom:0.8mm;"><span class="field-label">Notes</span><div class="field-line"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">XP &amp; Advances</div>
+        <div class="panel-body" style="padding:1mm 1.5mm;">
+          <div class="xp-grid" style="margin-bottom:1mm;">
+            <div class="xp-box"><span class="xp-label">Total XP Earned</span><span class="xp-val"></span></div>
+            <div class="xp-box"><span class="xp-label">Current Rank</span><span class="xp-val"></span></div>
+          </div>
+          <table class="advance-table">
+            <tr><th style="width:16mm;">Advance #</th><th>Edge / Skill / Attribute Raise Taken</th></tr>
+            <tr><td>1</td><td></td></tr>
+            <tr><td>2</td><td></td></tr>
+            <tr><td>3</td><td></td></tr>
+            <tr><td>4</td><td></td></tr>
+            <tr><td>5</td><td></td></tr>
+            <tr><td>6</td><td></td></tr>
+            <tr><td>7</td><td></td></tr>
+            <tr><td>8</td><td></td></tr>
+            <tr><td>9</td><td></td></tr>
+            <tr><td>10</td><td></td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col" style="flex:1;">
+
+      <div class="panel">
+        <div class="panel-head red">Ki Power Tracker</div>
+        <div class="panel-body">
+          <div style="font-size:7px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.5mm;">Ki Power Points (separate pool)</div>
+          <div class="ki-track">
+            <div class="ki-pip">1</div><div class="ki-pip">2</div><div class="ki-pip">3</div>
+            <div class="ki-pip">4</div><div class="ki-pip">5</div>
+          </div>
+          <div style="font-size:6.5px;color:var(--ink-faint);margin-bottom:1mm;">Free action &#8212; once per round</div>
+          <div class="ki-power-row">
+            <div><div class="ki-power-name">Damage Focus</div><div class="ki-power-cost">1&#8211;3 PP &#8594; +1/+2/+3 damage this round</div></div>
+            <div style="display:flex;gap:0.5mm;"><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div></div>
+          </div>
+          <div class="ki-power-row">
+            <div><div class="ki-power-name">Defense Focus</div><div class="ki-power-cost">1&#8211;3 PP &#8594; +1/+2/+3 Parry this round</div></div>
+            <div style="display:flex;gap:0.5mm;"><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div></div>
+          </div>
+          <div class="ki-power-row">
+            <div><div class="ki-power-name">Swift Step</div><div class="ki-power-cost">1&#8211;3 PP &#8594; +2/+4/+6 Pace this round</div></div>
+            <div style="display:flex;gap:0.5mm;"><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div><div class="cbox" style="border-color:var(--red);width:4mm;height:4mm;"></div></div>
+          </div>
+          <hr style="border:none;border-top:0.2mm solid var(--rule);margin:1mm 0;">
+          <div style="font-size:7px;font-weight:bold;color:var(--ink-mid);margin-bottom:0.3mm;">Gakusho Ki (if applicable)</div>
+          <div class="ki-power-row">
+            <div><div class="ki-power-name">Devotion</div><div class="ki-power-cost">1 PP &#8594; +2 next Butsudo/Shinten roll</div></div>
+            <div><div class="cbox" style="width:4mm;height:4mm;"></div></div>
+          </div>
+          <div class="ki-power-row">
+            <div><div class="ki-power-name">Lore Master</div><div class="ki-power-cost">2 PP &#8594; auto-raise once per session</div></div>
+            <div><div class="cbox" style="width:4mm;height:4mm;"></div></div>
           </div>
         </div>
       </div>
+
+      <div class="panel">
+        <div class="panel-head gold">Sacred Texts</div>
+        <div class="panel-body" style="padding:1mm 1.5mm;">
+          <div style="display:grid;grid-template-columns:4.5mm 1fr 16mm 10mm;gap:0.5mm;margin-bottom:0.5mm;font-size:6.5px;font-weight:bold;color:var(--ink-mid);">
+            <div></div><div>Text</div><div>Tradition</div><div style="text-align:center;">Scene</div>
+          </div>
+          <div class="text-row"><div class="text-check"></div><div>Heart Sutra</div><div class="text-tradition">Buddhist</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Healing Sutra</div><div class="text-tradition">Buddhist</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Goma Ritual</div><div class="text-tradition">Buddhist</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Amida Sutra</div><div class="text-tradition">Buddhist</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Oharae no Kotoba</div><div class="text-tradition">Shinto</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Healing Norito</div><div class="text-tradition">Shinto</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Exorcism Norito</div><div class="text-tradition">Shinto</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div class="text-row"><div class="text-check"></div><div>Ward Norito</div><div class="text-tradition">Shinto</div><div class="text-scene"><div class="scene-box"></div></div></div>
+          <div style="font-size:6.5px;color:var(--ink-faint);margin-top:0.5mm;">Check = known. Circle = used this scene. Blocked at Pollution/Kegare 3+.</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">Arcane Powers</div>
+        <div class="panel-body" style="padding:1mm 1.5mm;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5mm;margin-bottom:1mm;">
+            <div class="xp-box"><span class="xp-label">Arcane Skill</span><span class="xp-val"></span></div>
+            <div class="xp-box"><span class="xp-label">Current PP</span><span class="xp-val"></span></div>
+            <div class="xp-box"><span class="xp-label">Max PP</span><span class="xp-val"></span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:4.5mm 1fr 10mm 22mm;gap:0.5mm;margin-bottom:0.5mm;font-size:6.5px;font-weight:bold;color:var(--ink-mid);">
+            <div></div><div>Power Name</div><div style="text-align:center;">PP</div><div>Trapping</div>
+          </div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+          <div class="arcane-power-row"><div class="text-check"></div><div class="arcane-power-line"></div><div></div><div class="arcane-power-line"></div></div>
+        </div>
+      </div>
+
+      <div class="panel" style="flex:1;">
+        <div class="panel-head">Background, Obligations &amp; Notes</div>
+        <div class="panel-body" style="padding:0;flex:1;">
+          <div class="notes-area"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- NOTES -->
-  <div class="panel" style="flex:1;">
-    <div class="panel-head">Background, Obligations &amp; Notes</div>
-    <div class="panel-body" style="padding:0;">
-      <div class="notes-area" style="min-height:22mm;"></div>
-    </div>
-  </div>
+</div>
 
-</div><!-- /page -->
 </body>
 </html>
